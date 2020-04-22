@@ -27,19 +27,28 @@ void updateOutput() {
     std::string seperator = "  |  ";
 
     int sizeOfArr = sizeof(leftModules)/24;
-    for (int i = 0; i < sizeOfArr; i++) {
-        left += i == sizeOfArr - 1 ? modulesMap[leftModules[i]]() : modulesMap[leftModules[i]]() + seperator;
+    if (sizeOfArr) {
+        for (int i = 0; i < sizeOfArr; i++) {
+            left += i == sizeOfArr - 1 ? modulesMap[leftModules[i]]() : modulesMap[leftModules[i]]() + seperator;
+        }
     }
+    
 
     sizeOfArr = sizeof(centerModules)/24;
-    for (int i = 0; i < sizeOfArr; i++) {
-        center += i == sizeOfArr - 1 ? modulesMap[centerModules[i]]() : modulesMap[centerModules[i]]() + seperator;
+    if (sizeOfArr) {
+        for (int i = 0; i < sizeOfArr; i++) {
+            center += i == sizeOfArr - 1 ? modulesMap[centerModules[i]]() : modulesMap[centerModules[i]]() + seperator;
+        }
     }
+    
 
     sizeOfArr = sizeof(rightModules)/24;
-    for (int i = 0; i < sizeOfArr; i++) {
-        right += i == sizeOfArr - 1 ? modulesMap[rightModules[i]]() : modulesMap[rightModules[i]]() + seperator;
+    if (sizeOfArr) {
+        for (int i = 0; i < sizeOfArr; i++) {
+            right += i == sizeOfArr - 1 ? modulesMap[rightModules[i]]() : modulesMap[rightModules[i]]() + seperator;
+        }
     }
+    
 
     std::cout << left + center + right << std::endl;
 }
