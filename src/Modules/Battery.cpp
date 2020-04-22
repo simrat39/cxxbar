@@ -12,6 +12,7 @@ namespace Battery {
         for (const std::filesystem::directory_entry& entry : std::filesystem::directory_iterator("/sys/class/power_supply/")) {
             if (entry.path().string().find("BAT") != std::string::npos) {
                 batteryPath = std::string(entry.path());
+                break;
             }
         }
     }
