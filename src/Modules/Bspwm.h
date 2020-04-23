@@ -6,4 +6,6 @@ namespace Bspwm {
 
     std::string getBspwmStatus();
 
+    std::string getOutput();
+
 }

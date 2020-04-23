@@ -6,6 +6,7 @@
 namespace Battery {
 
     static std::string batteryPath = "/sys/class/power_supply/BAT0";
+    static std::string output = "";
 
     void setBatteryPath() {
         for (const std::filesystem::directory_entry& entry : std::filesystem::directory_iterator("/sys/class/power_supply/")) {
@@ -40,6 +41,11 @@ namespace Battery {
                 icon = "";
             }
         }
-        return icon + " " + std::to_string(capacity) + "%";
+        output = icon + " " + std::to_string(capacity) + "%";
+        return output;
+    }
+
+    std::string getOutput() {
+        return output;
     }
 }

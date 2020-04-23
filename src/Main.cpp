@@ -16,9 +16,9 @@ std::string centerModules[] = {};
 std::string rightModules[] = {"Network","Battery"};
 
 void setModuleMap() {
-    modulesMap["Battery"] = Battery::getBatteryStatus;
-    modulesMap["Network"] = Network::getNetworkStatus;
-    modulesMap["BSPWM"] = Bspwm::getBspwmStatus;
+    modulesMap["Battery"] = Battery::getOutput;
+    modulesMap["Network"] = Network::getOutput;
+    modulesMap["BSPWM"] = Bspwm::getOutput;
 }
 
 void updateOutput() {

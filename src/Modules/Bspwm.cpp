@@ -1,10 +1,12 @@
 #include "../Utils/BspwmUtils.h"
 #include "../Main.h"
+#include "Bspwm.h"
 #include <thread>
 
 namespace Bspwm {
 
     static std::string status;
+    static std::string output = "";
 
     void BspwmLooper() {
         int fd = BspwmUtils::connect();
@@ -15,6 +17,7 @@ namespace Bspwm {
         while (true) {
             BspwmUtils::readFromSocket(fd , &status);
             if (status != newStatus) {
+                getBspwmStatus();
                 updateOutput();
                 newStatus = status;
             }
@@ -23,23 +26,25 @@ namespace Bspwm {
     }
 
     std::string getBspwmStatus() {
-
-        std::string formattedStatus = "";
-
+        output = "";
         int x = 1; // counter
         for (char i : status.substr(0 , status.find("\n"))) {
             if (i == 'O' || i == 'F') {
-                formattedStatus += "  %{+u}" + std::to_string(x) + "%{-u}  ";
+                output += "  %{+u}" + std::to_string(x) + "%{-u}  ";
                 x++;
             } else if (i == 'o') {
-                formattedStatus += "  " + std::to_string(x) + "  ";
+                output += "  " + std::to_string(x) + "  ";
                 x++;
             } else if (i == 'f') {
                 x++;
             }
         }
 
-        return formattedStatus;
+        return output;
+    }
+
+    std::string getOutput() {
+        return output;
     }
 
 }
