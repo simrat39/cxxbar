@@ -4,19 +4,21 @@
 
 #include "Modules/Network.h"
 #include "Modules/Battery.h"
+#include "Modules/Bspwm.h"
 
 typedef std::string(*funcPtr)();
 
 // Map of modules <string : getModuleStatus function>
 static std::map<std::string , funcPtr> modulesMap;
 
-std::string leftModules[] = {"Battery","Network"};
-std::string centerModules[] = {"Battery","Network"};
-std::string rightModules[] = {"Battery","Network"};
+std::string leftModules[] = {"BSPWM"};
+std::string centerModules[] = {};
+std::string rightModules[] = {"Network","Battery"};
 
 void setModuleMap() {
     modulesMap["Battery"] = Battery::getBatteryStatus;
     modulesMap["Network"] = Network::getNetworkStatus;
+    modulesMap["BSPWM"] = Bspwm::getBspwmStatus;
 }
 
 void updateOutput() {
@@ -74,7 +76,10 @@ int main() {
     Battery::setBatteryPath();
     std::thread batteryThread(looper,1000,Battery::getBatteryStatus);
 
+    std::thread bspwmThread(Bspwm::BspwmLooper);
+
     networkThread.join();
     batteryThread.join();   
+    bspwmThread.join();
     return 0;
 }
