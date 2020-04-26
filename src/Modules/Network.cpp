@@ -51,6 +51,8 @@ namespace Network {
         g_variant_get (ret, "^a&o", &paths);
         g_variant_unref (ret);
 
+        char* networkName = (char*)"";
+
         if (paths[0] != NULL) {
             const char* activeConnectionDbusPath = paths[0];
 
@@ -63,13 +65,12 @@ namespace Network {
                                                     NULL, /* GCancellable */
                                                     NULL), "Id");
     
-            char* networkName;
             g_variant_get (ret, "s", &networkName);
             g_variant_unref (ret);
             return networkName;
         }
         
-        return (char*) "";
+        return networkName;
         
     }
 
