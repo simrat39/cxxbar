@@ -26,7 +26,10 @@ void setModuleMap() {
 }
 
 void updateOutput() {
-    std::string left = "%{l}";
+    const char* leftPadding = " ";
+    const char* rightPadding = " ";
+
+    std::string left = std::string("%{l}") + leftPadding;
     std::string center = "%{c}";
     std::string right = "%{r}";
 
@@ -55,6 +58,7 @@ void updateOutput() {
         }
     }
     
+    right += rightPadding;
 
     std::cout << left + center + right << std::endl;
 }
