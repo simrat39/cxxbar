@@ -6,13 +6,14 @@
 #include "Modules/Battery.h"
 #include "Modules/Bspwm.h"
 #include "Modules/Date.h"
+#include "Modules/Time.h"
 
 typedef std::string(*funcPtr)();
 
 // Map of modules <string : getModuleStatus function>
 static std::map<std::string , funcPtr> modulesMap;
 
-std::string leftModules[] = {"Date"};
+std::string leftModules[] = {"Date","Time"};
 std::string centerModules[] = {"BSPWM"};
 std::string rightModules[] = {"Network","Battery"};
 
@@ -21,6 +22,7 @@ void setModuleMap() {
     modulesMap["Network"] = Network::getOutput;
     modulesMap["BSPWM"] = Bspwm::getOutput;
     modulesMap["Date"] = Date::getOutput;
+    modulesMap["Time"] = Time::getOutput;
 }
 
 void updateOutput() {
@@ -82,9 +84,12 @@ int main() {
 
     std::thread dateThread(looper , 60000 , Date::getDate);
 
+    std::thread timeThread(looper, 1000 , Time::getTime);
+
     networkThread.join();
     batteryThread.join();   
     bspwmThread.join();
     dateThread.join();
+    timeThread.join();
     return 0;
 }
