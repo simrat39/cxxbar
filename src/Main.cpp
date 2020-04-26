@@ -71,7 +71,7 @@ void looper(int sleepTime, funcPtr func) {
 int main() {
     setModuleMap();
 
-    std::thread networkThread(looper,1000,Network::getNetworkStatus); 
+    std::thread networkThread(Network::networkLooper); 
 
     Battery::setBatteryPath();
     std::thread batteryThread(looper,1000,Battery::getBatteryStatus);
