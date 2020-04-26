@@ -10,7 +10,6 @@
 namespace Network {
 
     static std::string output = "";
-    static char* activeConnectionDbusPath;
 
     std::string getNetworkStatus(const char* networkName) {
         std::ifstream wifiOperstate("/sys/class/net/wlp7s0/operstate");
@@ -31,7 +30,7 @@ namespace Network {
         return output;
     }
 
-    void setActiveConnectionDbusPath() {
+    char* getNetworkName() {
         GDBusProxy *proxy;
         GError *error = NULL;
 
@@ -51,30 +50,33 @@ namespace Network {
                                     "ActiveConnections");
         g_variant_get (ret, "^a&o", &paths);
         g_variant_unref (ret);
-        activeConnectionDbusPath = paths[0];
-    }
 
-    char* getNetworkName(const char* ActiveConnectionDbusPath) {
-        GVariant* ret = g_dbus_proxy_get_cached_property (g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SYSTEM,
-                                                G_DBUS_PROXY_FLAGS_NONE,
-                                                NULL, /* GDBusInterfaceInfo */
-                                                "org.freedesktop.NetworkManager",
-                                                ActiveConnectionDbusPath,
-                                                "org.freedesktop.NetworkManager.Connection.Active",
-                                                NULL, /* GCancellable */
-                                                NULL), "Id");
+        if (paths[0] != NULL) {
+            const char* activeConnectionDbusPath = paths[0];
+
+            ret = g_dbus_proxy_get_cached_property (g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SYSTEM,
+                                                    G_DBUS_PROXY_FLAGS_NONE,
+                                                    NULL, /* GDBusInterfaceInfo */
+                                                    "org.freedesktop.NetworkManager",
+                                                    activeConnectionDbusPath,
+                                                    "org.freedesktop.NetworkManager.Connection.Active",
+                                                    NULL, /* GCancellable */
+                                                    NULL), "Id");
     
-        char* networkName;
-        g_variant_get (ret, "s", &networkName);
-        g_variant_unref (ret);
-        return networkName;
+            char* networkName;
+            g_variant_get (ret, "s", &networkName);
+            g_variant_unref (ret);
+            return networkName;
+        }
+        
+        return (char*) "";
+        
     }
 
     void networkLooper() {
         std::string newStatus = "";
-        setActiveConnectionDbusPath();
         while (true) {
-            std::string status = getNetworkStatus(getNetworkName(activeConnectionDbusPath));
+            std::string status = getNetworkStatus(getNetworkName());
 
             if (status != newStatus) {
                 updateOutput();

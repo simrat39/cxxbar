@@ -4,9 +4,7 @@ namespace Network {
 
     std::string getOutput();
 
-    void setActiveConnectionDbusPath();
-
-    char* getNetworkName(const char* ActiveConnectionDbusPath);
+    char* getNetworkName();
 
     void networkLooper();
 }
