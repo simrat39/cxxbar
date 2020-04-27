@@ -34,6 +34,9 @@ void setPropertiesFromConfig() {
     // padding
     leftPadding = ConfigUtils::getValue("padding-left","2");
     rightPadding = ConfigUtils::getValue("padding-right","2");
+
+    // network
+    Network::setPropertiesFromConfig();
 }
 
 void setModuleMap() {

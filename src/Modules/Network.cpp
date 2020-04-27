@@ -6,19 +6,29 @@
 #include "../Utils/FileUtils.h"
 #include "Network.h"
 #include "../Main.h"
+#include "../Utils/ConfigUtils.h"
 
 namespace Network {
 
     static std::string output = "";
+    static bool showNetworkName;
+
+    void setPropertiesFromConfig() {
+        if (ConfigUtils::getValue("show-network-name","true") == "true") {
+            showNetworkName = true;
+        } else {
+            showNetworkName = false;
+        }
+    }
 
     std::string getNetworkStatus(const char* networkName) {
         std::ifstream wifiOperstate("/sys/class/net/wlp7s0/operstate");
         std::ifstream ethOperstate("/sys/class/net/enp8s0/operstate");
 
         if (FileUtils::doesFileExist(wifiOperstate) && FileUtils::readFirstLine(wifiOperstate) == "up") {
-            output = std::string(" ") + networkName;
+            output =  showNetworkName ? std::string(" ") + networkName : std::string("");
         } else if (FileUtils::doesFileExist(ethOperstate) && FileUtils::readFirstLine(ethOperstate) == "up"){
-            output = std::string(" ") + networkName;
+            output = showNetworkName ? std::string(" ") + networkName : std::string("");
         } else {
             output = std::string("\uf00d");
         }
@@ -77,7 +87,12 @@ namespace Network {
     void networkLooper() {
         std::string newStatus = "";
         while (true) {
-            std::string status = getNetworkStatus(getNetworkName());
+            std::string status;
+            if (showNetworkName) {
+                status = getNetworkStatus(getNetworkName());
+            } else {
+                status = getNetworkStatus("");
+            }
 
             if (status != newStatus) {
                 updateOutput();
@@ -86,5 +101,4 @@ namespace Network {
             std::this_thread::sleep_for(std::chrono::milliseconds(3000));
         }
     }
-
 }
