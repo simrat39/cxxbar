@@ -15,16 +15,25 @@ typedef std::string(*funcPtr)();
 // Map of modules <string : getModuleStatus function>
 static std::map<std::string , funcPtr> modulesMap;
 
+// Main Properties begin
 std::string leftModules[] = {"Date","Time"};
 std::string centerModules[] = {"BSPWM"};
 std::string rightModules[] = {"Network","Battery"};
 
 std::string seperator;
 
+std::string leftPadding;
+std::string rightPadding;
+// Main Properties end
+
 void setPropertiesFromConfig() {
     // seperator
     std::string seperatorVal = ConfigUtils::getValue("seperator" , "\"  |  \"");
     seperator = seperatorVal.substr(1,seperatorVal.size() - 2);
+
+    // padding
+    leftPadding = ConfigUtils::getValue("padding-left","2");
+    rightPadding = ConfigUtils::getValue("padding-right","2");
 }
 
 void setModuleMap() {
@@ -36,13 +45,16 @@ void setModuleMap() {
 }
 
 void updateOutput() {
-    const char* leftPadding = " ";
-    const char* rightPadding = " ";
-
-    std::string left = std::string("%{l}") + leftPadding;
+    std::string left = "%{l}";
     std::string center = "%{c}";
     std::string right = "%{r}";
 
+    // Setup left padding
+    for (int i = 0; i < std::stoi(leftPadding); i++) {
+        left += " ";
+   }
+
+    // Setup left modules
     int sizeOfArr = sizeof(leftModules)/24;
     if (sizeOfArr) {
         for (int i = 0; i < sizeOfArr; i++) {
@@ -50,7 +62,7 @@ void updateOutput() {
         }
     }
     
-
+    // Setup center modules
     sizeOfArr = sizeof(centerModules)/24;
     if (sizeOfArr) {
         for (int i = 0; i < sizeOfArr; i++) {
@@ -58,7 +70,7 @@ void updateOutput() {
         }
     }
     
-
+    // Setup right modules
     sizeOfArr = sizeof(rightModules)/24;
     if (sizeOfArr) {
         for (int i = 0; i < sizeOfArr; i++) {
@@ -66,7 +78,10 @@ void updateOutput() {
         }
     }
     
-    right += rightPadding;
+    // Setup right padding
+    for (int i = 0; i < std::stoi(rightPadding); i++) {
+        right += " ";
+    }
 
     std::cout << left + center + right << std::endl;
 }
