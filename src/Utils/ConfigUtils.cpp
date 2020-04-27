@@ -21,9 +21,11 @@ namespace ConfigUtils {
             std::string l_key = ConfigUtils::strip(line.substr(0,line.find("=")));
             std::string l_value = ConfigUtils::strip(line.substr(line.find("=") + 1,sizeof(line)));
             if (l_key == key) {
+                file.close();
                 return l_value;
             }
         }
+        file.close();        
         return defaultVal;
     }
 
