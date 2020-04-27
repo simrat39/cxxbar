@@ -8,6 +8,8 @@
 #include "Modules/Date.h"
 #include "Modules/Time.h"
 
+#include "Utils/ConfigUtils.h"
+
 typedef std::string(*funcPtr)();
 
 // Map of modules <string : getModuleStatus function>
@@ -16,6 +18,14 @@ static std::map<std::string , funcPtr> modulesMap;
 std::string leftModules[] = {"Date","Time"};
 std::string centerModules[] = {"BSPWM"};
 std::string rightModules[] = {"Network","Battery"};
+
+std::string seperator;
+
+void setPropertiesFromConfig() {
+    // seperator
+    std::string seperatorVal = ConfigUtils::getValue("seperator" , "\"  |  \"");
+    seperator = seperatorVal.substr(1,seperatorVal.size() - 2);
+}
 
 void setModuleMap() {
     modulesMap["Battery"] = Battery::getOutput;
@@ -32,8 +42,6 @@ void updateOutput() {
     std::string left = std::string("%{l}") + leftPadding;
     std::string center = "%{c}";
     std::string right = "%{r}";
-
-    std::string seperator = "  |  ";
 
     int sizeOfArr = sizeof(leftModules)/24;
     if (sizeOfArr) {
@@ -78,6 +86,7 @@ void looper(int sleepTime, funcPtr func) {
 
 int main() {
     setModuleMap();
+    setPropertiesFromConfig();
 
     std::thread networkThread(Network::networkLooper); 
 
