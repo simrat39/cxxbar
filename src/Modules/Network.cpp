@@ -2,6 +2,8 @@
 #include <thread>
 #include <chrono>
 #include <gio/gio.h>
+#include <filesystem>
+#include <iostream>
 
 #include "../Utils/FileUtils.h"
 #include "Network.h"
@@ -12,6 +14,18 @@ namespace Network {
 
     static std::string output = "";
     static bool showNetworkName;
+    static std::string wifiSysfs;
+    static std::string ethSysfs;
+
+    void setWifiEthSysfs() {
+        for (const auto& i : std::filesystem::directory_iterator("/sys/class/net/")) {
+            if (i.path().string()[15] == 'w') {
+                wifiSysfs = i.path().string();
+            } else if (i.path().string()[15] == 'e') {
+                ethSysfs = i.path().string();
+            }
+        }
+    }   
 
     void setPropertiesFromConfig() {
         if (ConfigUtils::getValue("show-network-name","true") == "true") {
@@ -22,8 +36,8 @@ namespace Network {
     }
 
     std::string getNetworkStatus(const char* networkName) {
-        std::ifstream wifiOperstate("/sys/class/net/wlp7s0/operstate");
-        std::ifstream ethOperstate("/sys/class/net/enp8s0/operstate");
+        std::ifstream wifiOperstate(wifiSysfs + "/operstate");
+        std::ifstream ethOperstate(ethSysfs + "/operstate");
 
         if (FileUtils::doesFileExist(wifiOperstate) && FileUtils::readFirstLine(wifiOperstate) == "up") {
             output =  showNetworkName ? std::string(" ") + networkName : std::string("");
@@ -85,6 +99,7 @@ namespace Network {
     }
 
     void networkLooper() {
+        setWifiEthSysfs();
         std::string newStatus = "";
         while (true) {
             std::string status;
