@@ -48,12 +48,18 @@ void setModuleMap() {
     modulesMap["Time"] = Time::getOutput;
 }
 
-void setupModuleString(std::vector<std::string> posModules, std::string& position) {
+void setOutputStringforPosition(std::vector<std::string> posModules, std::string& position) {
     int sizeOfArr = posModules.size();
     if (sizeOfArr) {
         for (int i = 0; i < sizeOfArr; i++) {
             position += i == sizeOfArr - 1 ? modulesMap[(posModules)[i]]() : modulesMap[(posModules)[i]]() + seperator;
         }
+    }
+}
+
+void setPadding(std::string& amount, std::string& position) {
+    for (int i = 0; i < std::stoi(amount); i++) {
+            position += " ";
     }
 }
 
@@ -63,21 +69,17 @@ void updateOutput() {
     std::string right = "%{r}";
 
     // Setup left padding
-    for (int i = 0; i < std::stoi(leftPadding); i++) {
-        left += " ";
-   }
+    setPadding(leftPadding, left);
 
     // Setup left modules
-    setupModuleString(leftModules, left);
+    setOutputStringforPosition(leftModules, left);
     // Setup center modules
-    setupModuleString(centerModules, center);
+    setOutputStringforPosition(centerModules, center);
     // Setup right modules
-    setupModuleString(rightModules, right);
+    setOutputStringforPosition(rightModules, right);
     
     // Setup right padding
-    for (int i = 0; i < std::stoi(rightPadding); i++) {
-        right += " ";
-    }
+    setPadding(rightPadding, right);
 
     std::cout << left + center + right << std::endl;
 }
