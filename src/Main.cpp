@@ -1,6 +1,7 @@
 #include <iostream>
 #include <thread>
 #include <map>
+#include <vector>
 
 #include "Modules/Network.h"
 #include "Modules/Battery.h"
@@ -16,9 +17,9 @@ typedef std::string(*funcPtr)();
 static std::map<std::string , funcPtr> modulesMap;
 
 // Main Properties begin
-std::string leftModules[] = {"Date","Time"};
-std::string centerModules[] = {"BSPWM"};
-std::string rightModules[] = {"Network","Battery"};
+std::vector<std::string> leftModules = {"Date","Time"};
+std::vector<std::string> centerModules = {"BSPWM"};
+std::vector<std::string> rightModules = {"Network","Battery"};
 
 std::string seperator;
 
@@ -47,6 +48,15 @@ void setModuleMap() {
     modulesMap["Time"] = Time::getOutput;
 }
 
+void setupModuleString(std::vector<std::string> posModules, std::string& position) {
+    int sizeOfArr = posModules.size();
+    if (sizeOfArr) {
+        for (int i = 0; i < sizeOfArr; i++) {
+            position += i == sizeOfArr - 1 ? modulesMap[(posModules)[i]]() : modulesMap[(posModules)[i]]() + seperator;
+        }
+    }
+}
+
 void updateOutput() {
     std::string left = "%{l}";
     std::string center = "%{c}";
@@ -58,28 +68,11 @@ void updateOutput() {
    }
 
     // Setup left modules
-    int sizeOfArr = sizeof(leftModules)/24;
-    if (sizeOfArr) {
-        for (int i = 0; i < sizeOfArr; i++) {
-            left += i == sizeOfArr - 1 ? modulesMap[leftModules[i]]() : modulesMap[leftModules[i]]() + seperator;
-        }
-    }
-    
+    setupModuleString(leftModules, left);
     // Setup center modules
-    sizeOfArr = sizeof(centerModules)/24;
-    if (sizeOfArr) {
-        for (int i = 0; i < sizeOfArr; i++) {
-            center += i == sizeOfArr - 1 ? modulesMap[centerModules[i]]() : modulesMap[centerModules[i]]() + seperator;
-        }
-    }
-    
+    setupModuleString(centerModules, center);
     // Setup right modules
-    sizeOfArr = sizeof(rightModules)/24;
-    if (sizeOfArr) {
-        for (int i = 0; i < sizeOfArr; i++) {
-            right += i == sizeOfArr - 1 ? modulesMap[rightModules[i]]() : modulesMap[rightModules[i]]() + seperator;
-        }
-    }
+    setupModuleString(rightModules, right);
     
     // Setup right padding
     for (int i = 0; i < std::stoi(rightPadding); i++) {
