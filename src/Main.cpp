@@ -17,15 +17,27 @@ typedef std::string(*funcPtr)();
 static std::map<std::string , funcPtr> modulesMap;
 
 // Main Properties begin
-std::vector<std::string> leftModules = {"Date","Time"};
-std::vector<std::string> centerModules = {"BSPWM"};
-std::vector<std::string> rightModules = {"Network","Battery"};
+std::vector<std::string> leftModules;
+std::vector<std::string> centerModules;
+std::vector<std::string> rightModules;
 
 std::string seperator;
 
 std::string leftPadding;
 std::string rightPadding;
 // Main Properties end
+
+void setPosModulesVector(std::vector<std::string>& posModule, const std::string& property, const std::string& defaultValue) {
+    std::string posModuleFromConfig = ConfigUtils::getValue(property,defaultValue);
+    std::string module;
+    while (posModuleFromConfig.find(",") != std::string::npos) {
+        module = posModuleFromConfig.substr(0,posModuleFromConfig.find(","));
+        posModuleFromConfig.erase(0,posModuleFromConfig.find(",")+1);
+        posModule.push_back(module);
+    } 
+    module = posModuleFromConfig.substr(0,posModuleFromConfig.size());
+    posModule.push_back(module);
+}
 
 void setPropertiesFromConfig() {
     // seperator
@@ -38,6 +50,14 @@ void setPropertiesFromConfig() {
 
     // network
     Network::setPropertiesFromConfig();
+
+    // left modules vector
+    setPosModulesVector(leftModules, std::string("left"), std::string("Date,Time"));
+    // center modules vector
+    setPosModulesVector(centerModules, std::string("center"), std::string("BSPWM"));
+    // right modules vector
+    setPosModulesVector(rightModules, std::string("right"), std::string("Network,Battery"));
+    
 }
 
 void setModuleMap() {
