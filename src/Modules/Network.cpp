@@ -76,6 +76,11 @@ namespace Network {
         /* Call ListConnections D-Bus method */
         ret = g_dbus_proxy_get_cached_property (proxy,
                                     "ActiveConnections");
+        /* Disable network name regardless of config if failed to get property */
+        if (ret == NULL) {
+            showNetworkName = false;
+            return (char*)"";
+        }
         g_variant_get (ret, "^a&o", &paths);
         g_variant_unref (ret);
 
