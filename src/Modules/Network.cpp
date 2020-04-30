@@ -17,17 +17,39 @@ namespace Network {
     static std::string wifiSysfs;
     static std::string ethSysfs;
 
+    int foldersInDirectory(const std::string& path) {
+        int i = 0;
+        for (const auto& dir : std::filesystem::directory_iterator(path)) {
+            i++;
+        }
+        return i;            
+    }
+
     void setWifiEthSysfs() {
+        int num = foldersInDirectory("/sys/class/net/");
         for (const auto& i : std::filesystem::directory_iterator("/sys/class/net/")) {
             for (const auto& j : std::filesystem::directory_iterator(i.path().string())) {
                 if (j.path().string().find("wireless") != std::string::npos) {
-                    wifiSysfs = i.path().string();
-                    break;
+                    if (num == 3) {
+                        wifiSysfs = i.path().string();
+                        break;
+                    } else if (num > 3) {
+                        if (i.path().string()[15] == 'w') {
+                            wifiSysfs = i.path().string();
+                            break; 
+                        }
+                    }
                 }
             }
             if (i.path().string().find("lo") == std::string::npos && wifiSysfs == "") {
-                ethSysfs = i.path().string();
-            }
+                if (num == 3) {
+                    ethSysfs = i.path().string();
+                } else if (num > 3) {
+                    if (i.path().string()[15] == 'e') {
+                        ethSysfs = i.path().string();
+                    }
+                }
+            } 
         }
     }   
 
