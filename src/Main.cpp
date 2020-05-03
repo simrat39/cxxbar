@@ -10,11 +10,13 @@
 #include "Modules/Time.h"
 
 #include "Utils/ConfigUtils.h"
+#include "Modules/DateTime.h"
 
 typedef std::string(*funcPtr)();
 
 // Map of modules <string : getModuleStatus function>
 static std::map<std::string , funcPtr> modulesMap;
+static std::map<std::string , DateTime> dt_map = CustomDateTime::make_date_time_map();
 
 // Main Properties begin
 std::vector<std::string> leftModules;
@@ -72,7 +74,11 @@ void setOutputStringforPosition(std::vector<std::string> posModules, std::string
     int sizeOfArr = posModules.size();
     if (sizeOfArr) {
         for (int i = 0; i < sizeOfArr; i++) {
-            position += i == sizeOfArr - 1 ? modulesMap[(posModules)[i]]() : modulesMap[(posModules)[i]]() + seperator;
+            if (modulesMap.find(posModules[i]) != modulesMap.end()) {
+                posModules[i] != "" ? position += i == sizeOfArr - 1 ? modulesMap[(posModules)[i]]() : modulesMap[(posModules)[i]]() + seperator : position += "";
+            } else if (dt_map.find(posModules[i]) != dt_map.end()) {
+                posModules[i] != "" ? position += i == sizeOfArr - 1 ? dt_map[(posModules)[i]].getOutput() : dt_map[(posModules)[i]].getOutput() + seperator : position += "";
+            }
         }
     }
 }
@@ -89,7 +95,7 @@ void updateOutput() {
     std::string right = "%{r}";
 
     // Setup left padding
-    setPadding(leftPadding, left);
+  //  setPadding(leftPadding, left);
 
     // Setup left modules
     setOutputStringforPosition(leftModules, left);
@@ -99,7 +105,7 @@ void updateOutput() {
     setOutputStringforPosition(rightModules, right);
     
     // Setup right padding
-    setPadding(rightPadding, right);
+    //setPadding(rightPadding, right);
 
     std::cout << left + center + right << std::endl;
 }
@@ -118,6 +124,9 @@ void looper(int sleepTime, funcPtr func) {
 }
 
 int main() {
+
+    std::vector<std::thread> dt_thread = CustomDateTime::prepareThreads();
+
     setModuleMap();
     setPropertiesFromConfig();
 
