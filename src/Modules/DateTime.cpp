@@ -55,17 +55,17 @@ namespace CustomDateTime {
         return dtVec;
     }
 
-    std::vector<std::thread> make_date_time_threads() {
+    std::vector<std::thread> make_date_time_threads(std::vector<DateTime*> dtVec) {
         std::vector<std::thread> dtThreadVec;
-        for (DateTime* dt : CustomDateTime::make_date_time_vector()) {
+        for (DateTime* dt : dtVec) {
             dtThreadVec.push_back(std::thread(CustomLooper,*dt));
         }
         return dtThreadVec;
     }
 
-    std::map<std::string, DateTime*> make_date_time_map() {
+    std::map<std::string, DateTime*> make_date_time_map(std::vector<DateTime*> dtVec) {
         std::map<std::string, DateTime*> map;
-        for (DateTime* dt : CustomDateTime::make_date_time_vector()) {
+        for (DateTime* dt : dtVec) {
             map[dt->getName()] = dt;
         }
         return map;

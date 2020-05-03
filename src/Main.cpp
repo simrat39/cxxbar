@@ -28,8 +28,9 @@ std::string leftPadding;
 std::string rightPadding;
 // Main Properties end
 
-// Dynamic modules maps
-std::map<std::string,DateTime*> dt_map = CustomDateTime::make_date_time_map();
+// Dynamic modules
+std::vector<DateTime*> dt_vector = CustomDateTime::make_date_time_vector();
+std::map<std::string,DateTime*> dt_map = CustomDateTime::make_date_time_map(dt_vector);
 
 void setPosModulesVector(std::vector<std::string>& posModule, const std::string& property, const std::string& defaultValue) {
     std::string posModuleFromConfig = ConfigUtils::getValue(property,defaultValue);
@@ -130,7 +131,7 @@ int main() {
     setModuleMap();
     setPropertiesFromConfig();
 
-    std::vector<std::thread> dtthread = CustomDateTime::make_date_time_threads();
+    std::vector<std::thread> dtthread = CustomDateTime::make_date_time_threads(dt_vector);
 
     std::thread networkThread(Network::networkLooper); 
 

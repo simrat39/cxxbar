@@ -24,13 +24,12 @@ class DateTime {
 
         std::string getOutput();
 
-        std::string test();
-
 };
 
-void CustomLooper(DateTime m);
+void CustomLooper(DateTime tm);
 
 namespace CustomDateTime {
-    std::vector<std::thread> make_date_time_threads();
-    std::map<std::string, DateTime*> make_date_time_map();
+    std::vector<DateTime*> make_date_time_vector();
+    std::vector<std::thread> make_date_time_threads(std::vector<DateTime*> dtVec);
+    std::map<std::string, DateTime*> make_date_time_map(std::vector<DateTime*> dtVec);
 }
