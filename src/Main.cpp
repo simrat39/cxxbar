@@ -6,8 +6,9 @@
 #include "Modules/Network.h"
 #include "Modules/Battery.h"
 #include "Modules/Bspwm.h"
-#include "Modules/Date.h"
-#include "Modules/Time.h"
+#include "Modules/SimpleDate.h"
+#include "Modules/SimpleTime.h"
+#include "Modules/DateTime.h"
 
 #include "Utils/ConfigUtils.h"
 
@@ -26,6 +27,9 @@ std::string seperator;
 std::string leftPadding;
 std::string rightPadding;
 // Main Properties end
+
+// Dynamic modules maps
+std::map<std::string,DateTime*> dt_map = CustomDateTime::make_date_time_map();
 
 void setPosModulesVector(std::vector<std::string>& posModule, const std::string& property, const std::string& defaultValue) {
     std::string posModuleFromConfig = ConfigUtils::getValue(property,defaultValue);
@@ -64,15 +68,20 @@ void setModuleMap() {
     modulesMap["Battery"] = Battery::getOutput;
     modulesMap["Network"] = Network::getOutput;
     modulesMap["BSPWM"] = Bspwm::getOutput;
-    modulesMap["Date"] = Date::getOutput;
-    modulesMap["Time"] = Time::getOutput;
+    modulesMap["SimpleDate"] = SimpleDate::getOutput;
+    modulesMap["SimpleTime"] = SimpleTime::getOutput;
 }
 
 void setOutputStringforPosition(std::vector<std::string> posModules, std::string& position) {
     int sizeOfArr = posModules.size();
     if (sizeOfArr) {
         for (int i = 0; i < sizeOfArr; i++) {
-            position += i == sizeOfArr - 1 ? modulesMap[(posModules)[i]]() : modulesMap[(posModules)[i]]() + seperator;
+            if (modulesMap.find(posModules[i]) != modulesMap.end()) {
+                posModules[i] != "" ? position += i == sizeOfArr - 1 ? modulesMap[(posModules)[i]]() : modulesMap[(posModules)[i]]() + seperator : position += "";
+            } else if (dt_map.find(posModules[i]) != dt_map.end()) {
+                dt_map[(posModules)[i]]->getDate();
+                posModules[i] != "" ? position += i == sizeOfArr - 1 ? dt_map[(posModules)[i]]->getOutput() : dt_map[(posModules)[i]]->getOutput() + seperator : position += "";
+            }    
         }
     }
 }
@@ -121,6 +130,8 @@ int main() {
     setModuleMap();
     setPropertiesFromConfig();
 
+    std::vector<std::thread> dtthread = CustomDateTime::make_date_time_threads();
+
     std::thread networkThread(Network::networkLooper); 
 
     Battery::setBatteryPath();
@@ -128,9 +139,9 @@ int main() {
 
     std::thread bspwmThread(Bspwm::BspwmLooper);
 
-    std::thread dateThread(looper , 60000 , Date::getDate);
+    std::thread dateThread(looper , 60000 , SimpleDate::getDate);
 
-    std::thread timeThread(looper, 1000 , Time::getTime);
+    std::thread timeThread(looper, 1000 , SimpleTime::getTime);
 
     networkThread.join();
     batteryThread.join();   

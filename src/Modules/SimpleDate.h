@@ -1,6 +1,6 @@
 #include <string>
 
-namespace Date {
+namespace SimpleDate {
 
     std::string getDate();
 

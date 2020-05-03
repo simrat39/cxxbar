@@ -2,14 +2,14 @@
 #include <iostream>
 #include <string>
 
-namespace Date {
+namespace SimpleTime {
 
     std::string output = "";
 
-    std::string getDate() {
+    std::string getTime() {
         auto time = std::time(0);
         std::ostringstream oss;
-        oss << std::put_time(std::localtime(&time), "%d %b %Y");
+        oss << std::put_time(std::localtime(&time),"%I:%M %p");
         output = oss.str();
         return oss.str();
     }

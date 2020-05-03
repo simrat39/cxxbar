@@ -1,6 +1,7 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include <vector>
 
 namespace ConfigUtils {
 
@@ -29,4 +30,18 @@ namespace ConfigUtils {
         return defaultVal;
     }
 
+    std::vector<std::string> getEndingNameStartingWith(std::string str) {
+        std::ifstream file(std::string(getenv("HOME")) + std::string("/.config/cxxbar/conf"));
+        std::string line;
+        std::vector<std::string> vec;
+        while (getline(file,line)) {
+            std::string l_key = ConfigUtils::strip(line.substr(0,line.find("=")));
+            if (l_key.find(str) == 0) {
+                l_key.erase(0,str.length());
+                vec.push_back(l_key);
+            }
+        }
+        file.close();
+        return vec;        
+    }
 }

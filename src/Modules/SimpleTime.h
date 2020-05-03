@@ -1,6 +1,6 @@
 #include <string>
 
-namespace Time {
+namespace SimpleTime {
 
     std::string getTime();
 
