@@ -127,27 +127,48 @@ void looper(int sleepTime, funcPtr func) {
     }
 }
 
+void dummy() {
+    while(true) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000000));
+    }
+}
+
 int main() {
     setModuleMap();
     setPropertiesFromConfig();
 
-    std::vector<std::thread> dtthread = CustomDateTime::make_date_time_threads(dt_vector);
+    std::string allModules;
 
-    std::thread networkThread(Network::networkLooper); 
+    for (std::string i : leftModules) {
+        allModules += i + " ";
+    }
+    for (std::string i : centerModules) {
+        allModules += i + " ";
+    }
+    for (std::string i : rightModules) {
+        allModules += i + " ";
+    }
 
-    Battery::setBatteryPath();
-    std::thread batteryThread(looper,1000,Battery::getBatteryStatus);
+    std::thread networkThread,batteryThread,bspwmThread,dateThread,timeThread;
+    std::vector<std::thread> dtthread;
 
-    std::thread bspwmThread(Bspwm::BspwmLooper);
+    if (dt_vector.size())
+        dtthread = CustomDateTime::make_date_time_threads(dt_vector);
 
-    std::thread dateThread(looper , 60000 , SimpleDate::getDate);
-
-    std::thread timeThread(looper, 1000 , SimpleTime::getTime);
-
-    networkThread.join();
-    batteryThread.join();   
-    bspwmThread.join();
-    dateThread.join();
-    timeThread.join();
+    if (allModules.find("Network") != std::string::npos) {
+        networkThread = std::thread(Network::networkLooper); 
+    } if (allModules.find("Battery") != std::string::npos) {
+        Battery::setBatteryPath();
+        batteryThread = std::thread(looper,1000,Battery::getBatteryStatus);
+    } if (allModules.find("BSPWM") != std::string::npos) {
+        bspwmThread = std::thread(Bspwm::BspwmLooper);
+    } if (allModules.find("SimpleDate") != std::string::npos) {
+        dateThread = std::thread(looper , 60000 , SimpleDate::getDate);
+    } if (allModules.find("SimpleTime") != std::string::npos) {
+        timeThread = std::thread(looper, 1000 , SimpleTime::getTime);
+    }
+ 
+    std::thread dummyThread(dummy);
+    dummyThread.join();
     return 0;
 }
