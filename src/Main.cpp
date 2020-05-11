@@ -87,7 +87,7 @@ void setOutputStringforPosition(std::vector<std::string> posModules, std::string
     }
 }
 
-void setPadding(std::string& amount, std::string& position) {
+void setPadding(const std::string& amount, std::string& position) {
     for (int i = 0; i < std::stoi(amount); i++) {
             position += " ";
     }

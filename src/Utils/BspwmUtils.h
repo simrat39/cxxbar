@@ -9,6 +9,5 @@ namespace BspwmUtils {
     void readFromSocket(int& fd, std::string* str);
 
     typedef void(*funcPtr)(std::string);
-    void continuousRead(int& fd, std::string* str, const int& sleepTime, funcPtr func);
 
 }

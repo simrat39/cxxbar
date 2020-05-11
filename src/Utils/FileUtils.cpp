@@ -10,7 +10,7 @@ namespace FileUtils {
         return firstLine;
     }
 
-    bool doesFileExist(std::ifstream& file) {
+    bool doesFileExist(const std::ifstream& file) {
         return (bool)file;
     }
 

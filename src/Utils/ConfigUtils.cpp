@@ -15,7 +15,7 @@ namespace ConfigUtils {
         return str;
     }
 
-    std::string getValue(std::string key , std::string defaultVal) {
+    std::string getValue(const std::string &key , const std::string &defaultVal) {
         std::ifstream file(std::string(getenv("HOME")) + std::string("/.config/cxxbar/conf"));
         std::string line;
         while (getline(file,line)) {
@@ -30,13 +30,13 @@ namespace ConfigUtils {
         return defaultVal;
     }
 
-    std::vector<std::string> getEndingNameStartingWith(std::string str) {
+    std::vector<std::string> getEndingNameStartingWith(const std::string &str) {
         std::ifstream file(std::string(getenv("HOME")) + std::string("/.config/cxxbar/conf"));
         std::string line;
         std::vector<std::string> vec;
         while (getline(file,line)) {
             std::string l_key = ConfigUtils::strip(line.substr(0,line.find("=")));
-            if (l_key.find(str) == 0) {
+            if (l_key.starts_with(str)) {
                 l_key.erase(0,str.length());
                 vec.push_back(l_key);
             }

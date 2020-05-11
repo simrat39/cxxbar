@@ -10,11 +10,7 @@ class DateTime {
         std::string m_Name;
         int m_SleepTime;
     public:
-        DateTime(const std::string& name,const std::string& format,const int& sleep) {
-            m_Name = name;
-            m_Format = format;
-            m_SleepTime = sleep;
-        }
+        DateTime(const std::string& name,const std::string& format,const int& sleep) : m_Name(name), m_Format(format), m_SleepTime(sleep) {}
 
         int getSleepTime();
 
@@ -30,6 +26,6 @@ void CustomLooper(DateTime tm);
 
 namespace CustomDateTime {
     std::vector<DateTime*> make_date_time_vector();
-    std::vector<std::thread> make_date_time_threads(std::vector<DateTime*>& dtVec);
-    std::map<std::string, DateTime*> make_date_time_map(std::vector<DateTime*>& dtVec);
+    std::vector<std::thread> make_date_time_threads(const std::vector<DateTime*>& dtVec);
+    std::map<std::string, DateTime*> make_date_time_map(const std::vector<DateTime*>& dtVec);
 }
