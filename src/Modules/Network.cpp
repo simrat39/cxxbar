@@ -18,11 +18,7 @@ namespace Network {
     static std::string ethSysfs;
 
     int foldersInDirectory(const std::string& path) {
-        int i = 0;
-        for (const auto& dir : std::filesystem::directory_iterator(path)) {
-            i++;
-        }
-        return i;            
+        return std::distance(std::filesystem::begin(std::filesystem::directory_iterator(path)), std::filesystem::end(std::filesystem::directory_iterator(path)));            
     }
 
     void setWifiEthSysfs() {
