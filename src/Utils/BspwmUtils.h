@@ -8,6 +8,8 @@ namespace BspwmUtils {
 
     void readFromSocket(int& fd, std::string* str);
 
+    std::string getFocusedWS(int fd);
+
     typedef void(*funcPtr)(std::string);
 
 }

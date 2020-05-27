@@ -4,6 +4,7 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include <string>
 
 namespace BspwmUtils {
 
@@ -23,6 +24,14 @@ namespace BspwmUtils {
         char buf[100];
         read(fd , buf , sizeof(buf));
         *str = buf;
+    }
+
+    std::string getFocusedWS(int fd) {
+      char buf[] = "query\0-D\0-d\0--names";
+      send(fd,buf,sizeof(buf),0);
+      std::string ret;
+      BspwmUtils::readFromSocket(fd, &ret);
+      return ret;
     }
 
     typedef void(*funcPtr)(std::string);

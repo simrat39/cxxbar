@@ -151,7 +151,6 @@ int main() {
 
     std::thread networkThread,batteryThread,bspwmThread,dateThread,timeThread;
     std::vector<std::thread> dtthread;
-
     if (dt_vector.size())
         dtthread = CustomDateTime::make_date_time_threads(dt_vector);
 
