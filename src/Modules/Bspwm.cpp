@@ -31,11 +31,9 @@ namespace Bspwm {
         for (char i : status.substr(0 , status.find("\n"))) {
             if (i == 'O' || i == 'F') {
                 output += "  %{+u}";
-                if (std::stoi((BspwmUtils::getFocusedWS(BspwmUtils::connect()))) == x) {
-                    output += std::to_string(x) + "f";
-                } else {
-                    output += std::to_string(x);
-                }
+                output += std::to_string(x);
+                if (std::stoi((BspwmUtils::getFocusedWS(BspwmUtils::connect()))) == x)
+                    output += "f";
                 output += "%{-u}  ";
                 x++;
             } else if (i == 'o') {
