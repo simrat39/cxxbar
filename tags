@@ -1,0 +1,115 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/0c78c0c4/
+$(OUT)	Makefile	/^$(OUT): $(OBJ)$/;"	t	language:Make
+Battery	src/Modules/Battery.cpp	/^namespace Battery {$/;"	n	language:C++	file:
+Battery	src/Modules/Battery.h	/^namespace Battery {$/;"	n	language:C++
+Bspwm	src/Modules/Bspwm.cpp	/^namespace Bspwm {$/;"	n	language:C++	file:
+Bspwm	src/Modules/Bspwm.h	/^namespace Bspwm {$/;"	n	language:C++
+BspwmLooper	src/Modules/Bspwm.cpp	/^    void BspwmLooper() {$/;"	f	language:C++	namespace:Bspwm	typeref:typename:void
+BspwmUtils	src/Utils/BspwmUtils.cpp	/^namespace BspwmUtils {$/;"	n	language:C++	file:
+BspwmUtils	src/Utils/BspwmUtils.h	/^namespace BspwmUtils {$/;"	n	language:C++
+CXX	Makefile	/^CXX = g++$/;"	m	language:Make
+ConfigUtils	src/Utils/ConfigUtils.cpp	/^namespace ConfigUtils {$/;"	n	language:C++	file:
+ConfigUtils	src/Utils/ConfigUtils.h	/^namespace ConfigUtils {$/;"	n	language:C++
+CustomDateTime	src/Modules/DateTime.cpp	/^namespace CustomDateTime {$/;"	n	language:C++	file:
+CustomDateTime	src/Modules/DateTime.h	/^namespace CustomDateTime {$/;"	n	language:C++
+CustomLooper	src/Modules/DateTime.cpp	/^void CustomLooper(DateTime tm) {$/;"	f	language:C++	typeref:typename:void
+DateTime	src/Modules/DateTime.h	/^        DateTime(const std::string& name,const std::string& format,const int& sleep) : m_Name(na/;"	f	language:C++	class:DateTime
+DateTime	src/Modules/DateTime.h	/^class DateTime {$/;"	c	language:C++
+DirectoryOfThisScript	.ycm_extra_conf.py	/^def DirectoryOfThisScript():$/;"	f	language:Python
+FileUtils	src/Utils/FileUtils.cpp	/^namespace FileUtils {$/;"	n	language:C++	file:
+FileUtils	src/Utils/FileUtils.h	/^namespace FileUtils {$/;"	n	language:C++
+FlagsForFile	.ycm_extra_conf.py	/^def FlagsForFile( filename, **kwargs ):$/;"	f	language:Python
+GetCompilationInfoForFile	.ycm_extra_conf.py	/^def GetCompilationInfoForFile( filename ):$/;"	f	language:Python
+IsHeaderFile	.ycm_extra_conf.py	/^def IsHeaderFile( filename ):$/;"	f	language:Python
+LDLIBS	Makefile	/^LDLIBS = -pthread -lgio-2.0 -lgobject-2.0 -lglib-2.0$/;"	m	language:Make
+MakeRelativePathsInFlagsAbsolute	.ycm_extra_conf.py	/^def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):$/;"	f	language:Python
+Network	src/Modules/Network.cpp	/^namespace Network {$/;"	n	language:C++	file:
+Network	src/Modules/Network.h	/^namespace Network {$/;"	n	language:C++
+OBJ	Makefile	/^OBJ := $(SRC:.cpp=.o)$/;"	m	language:Make
+OUT	Makefile	/^OUT = a.out $/;"	m	language:Make
+SOURCE_EXTENSIONS	.ycm_extra_conf.py	/^SOURCE_EXTENSIONS = [ '.C', '.cpp', '.cxx', '.cc', '.c', '.m', '.mm' ]$/;"	v	language:Python
+SRC	Makefile	/^SRC = $(wildcard src\/Modules\/*.cpp) $(wildcard src\/Utils\/*.cpp) $(wildcard src\/*.cpp)$/;"	m	language:Make
+Settings	.ycm_extra_conf.py	/^def Settings( **kwargs ):$/;"	f	language:Python
+SimpleDate	src/Modules/SimpleDate.cpp	/^namespace SimpleDate {$/;"	n	language:C++	file:
+SimpleDate	src/Modules/SimpleDate.h	/^namespace SimpleDate {$/;"	n	language:C++
+SimpleTime	src/Modules/SimpleTime.cpp	/^namespace SimpleTime {$/;"	n	language:C++	file:
+SimpleTime	src/Modules/SimpleTime.h	/^namespace SimpleTime {$/;"	n	language:C++
+batteryPath	src/Modules/Battery.cpp	/^    static std::string batteryPath = "\/sys\/class\/power_supply\/BAT0";$/;"	v	language:C++	namespace:Battery	typeref:typename:std::string	file:
+centerModules	src/Main.cpp	/^std::vector<std::string> centerModules;$/;"	v	language:C++	typeref:typename:std::vector<std::string>
+clean	Makefile	/^clean:$/;"	t	language:Make
+compilation_database_folder	.ycm_extra_conf.py	/^compilation_database_folder = ''$/;"	v	language:Python
+connect	src/Utils/BspwmUtils.cpp	/^    int connect() {$/;"	f	language:C++	namespace:BspwmUtils	typeref:typename:int
+database	.ycm_extra_conf.py	/^  database = ycm_core.CompilationDatabase( compilation_database_folder )$/;"	v	language:Python
+doesFileExist	src/Utils/FileUtils.cpp	/^    bool doesFileExist(const std::ifstream& file) {$/;"	f	language:C++	namespace:FileUtils	typeref:typename:bool
+dt_map	src/Main.cpp	/^std::map<std::string,DateTime*> dt_map = CustomDateTime::make_date_time_map(dt_vector);$/;"	v	language:C++	typeref:typename:std::map<std::string,DateTime * >
+dt_vector	src/Main.cpp	/^std::vector<DateTime*> dt_vector = CustomDateTime::make_date_time_vector();$/;"	v	language:C++	typeref:typename:std::vector<DateTime * >
+dummy	src/Main.cpp	/^void dummy() {$/;"	f	language:C++	typeref:typename:void
+ethSysfs	src/Modules/Network.cpp	/^    static std::string ethSysfs;$/;"	v	language:C++	namespace:Network	typeref:typename:std::string	file:
+flags	.ycm_extra_conf.py	/^flags = [$/;"	v	language:Python
+foldersInDirectory	src/Modules/Network.cpp	/^    int foldersInDirectory(const std::string& path) {$/;"	f	language:C++	namespace:Network	typeref:typename:int
+funcPtr	src/Main.cpp	/^typedef std::string(*funcPtr)();$/;"	t	language:C++	typeref:typename:std::string (*)()	file:
+funcPtr	src/Utils/BspwmUtils.cpp	/^    typedef void(*funcPtr)(std::string);$/;"	t	language:C++	namespace:BspwmUtils	typeref:typename:void (*)(std::string)	file:
+funcPtr	src/Utils/BspwmUtils.h	/^    typedef void(*funcPtr)(std::string);$/;"	t	language:C++	namespace:BspwmUtils	typeref:typename:void (*)(std::string)
+getBatteryStatus	src/Modules/Battery.cpp	/^    std::string getBatteryStatus() {$/;"	f	language:C++	namespace:Battery	typeref:typename:std::string
+getBspwmStatus	src/Modules/Bspwm.cpp	/^    std::string getBspwmStatus() {$/;"	f	language:C++	namespace:Bspwm	typeref:typename:std::string
+getDate	src/Modules/DateTime.cpp	/^std::string DateTime::getDate(){$/;"	f	language:C++	class:DateTime	typeref:typename:std::string
+getDate	src/Modules/SimpleDate.cpp	/^    std::string getDate() {$/;"	f	language:C++	namespace:SimpleDate	typeref:typename:std::string
+getEndingNameStartingWith	src/Utils/ConfigUtils.cpp	/^    std::vector<std::string> getEndingNameStartingWith(const std::string &str) {$/;"	f	language:C++	namespace:ConfigUtils	typeref:typename:std::vector<std::string>
+getFocusedWS	src/Utils/BspwmUtils.cpp	/^    std::string getFocusedWS(int fd) {$/;"	f	language:C++	namespace:BspwmUtils	typeref:typename:std::string
+getName	src/Modules/DateTime.cpp	/^std::string DateTime::getName() {$/;"	f	language:C++	class:DateTime	typeref:typename:std::string
+getNetworkName	src/Modules/Network.cpp	/^    char* getNetworkName() {$/;"	f	language:C++	namespace:Network	typeref:typename:char *
+getNetworkStatus	src/Modules/Network.cpp	/^    std::string getNetworkStatus(const char* networkName) {$/;"	f	language:C++	namespace:Network	typeref:typename:std::string
+getOutput	src/Modules/Battery.cpp	/^    std::string getOutput() {$/;"	f	language:C++	namespace:Battery	typeref:typename:std::string
+getOutput	src/Modules/Bspwm.cpp	/^    std::string getOutput() {$/;"	f	language:C++	namespace:Bspwm	typeref:typename:std::string
+getOutput	src/Modules/DateTime.cpp	/^std::string DateTime::getOutput() {$/;"	f	language:C++	class:DateTime	typeref:typename:std::string
+getOutput	src/Modules/Network.cpp	/^    std::string getOutput() {$/;"	f	language:C++	namespace:Network	typeref:typename:std::string
+getOutput	src/Modules/SimpleDate.cpp	/^    std::string getOutput() {$/;"	f	language:C++	namespace:SimpleDate	typeref:typename:std::string
+getOutput	src/Modules/SimpleTime.cpp	/^    std::string getOutput() {$/;"	f	language:C++	namespace:SimpleTime	typeref:typename:std::string
+getSleepTime	src/Modules/DateTime.cpp	/^int DateTime::getSleepTime() {$/;"	f	language:C++	class:DateTime	typeref:typename:int
+getTime	src/Modules/SimpleTime.cpp	/^    std::string getTime() {$/;"	f	language:C++	namespace:SimpleTime	typeref:typename:std::string
+getValue	src/Utils/ConfigUtils.cpp	/^    std::string getValue(const std::string &key , const std::string &defaultVal) {$/;"	f	language:C++	namespace:ConfigUtils	typeref:typename:std::string
+leftModules	src/Main.cpp	/^std::vector<std::string> leftModules;$/;"	v	language:C++	typeref:typename:std::vector<std::string>
+leftPadding	src/Main.cpp	/^std::string leftPadding;$/;"	v	language:C++	typeref:typename:std::string
+looper	src/Main.cpp	/^void looper(int sleepTime, funcPtr func) {$/;"	f	language:C++	typeref:typename:void
+m_Format	src/Modules/DateTime.h	/^        std::string m_Format;$/;"	m	language:C++	class:DateTime	typeref:typename:std::string
+m_Name	src/Modules/DateTime.h	/^        std::string m_Name;$/;"	m	language:C++	class:DateTime	typeref:typename:std::string
+m_SleepTime	src/Modules/DateTime.h	/^        int m_SleepTime;$/;"	m	language:C++	class:DateTime	typeref:typename:int
+main	src/Main.cpp	/^int main() {$/;"	f	language:C++	typeref:typename:int
+make_date_time_map	src/Modules/DateTime.cpp	/^    std::map<std::string, DateTime*> make_date_time_map(const std::vector<DateTime*>& dtVec) {$/;"	f	language:C++	namespace:CustomDateTime	typeref:typename:std::map<std::string,DateTime * >
+make_date_time_threads	src/Modules/DateTime.cpp	/^    std::vector<std::thread> make_date_time_threads(const std::vector<DateTime*>& dtVec) {$/;"	f	language:C++	namespace:CustomDateTime	typeref:typename:std::vector<std::thread>
+make_date_time_vector	src/Modules/DateTime.cpp	/^    std::vector<DateTime*> make_date_time_vector() {$/;"	f	language:C++	namespace:CustomDateTime	typeref:typename:std::vector<DateTime * >
+modulesMap	src/Main.cpp	/^static std::map<std::string , funcPtr> modulesMap;$/;"	v	language:C++	typeref:typename:std::map<std::string,funcPtr>	file:
+networkLooper	src/Modules/Network.cpp	/^    void networkLooper() {$/;"	f	language:C++	namespace:Network	typeref:typename:void
+output	src/Modules/Battery.cpp	/^    static std::string output = "";$/;"	v	language:C++	namespace:Battery	typeref:typename:std::string	file:
+output	src/Modules/Bspwm.cpp	/^    static std::string output = "";$/;"	v	language:C++	namespace:Bspwm	typeref:typename:std::string	file:
+output	src/Modules/DateTime.h	/^        std::string output;$/;"	m	language:C++	class:DateTime	typeref:typename:std::string
+output	src/Modules/Network.cpp	/^    static std::string output = "";$/;"	v	language:C++	namespace:Network	typeref:typename:std::string	file:
+output	src/Modules/SimpleDate.cpp	/^    std::string output = "";$/;"	v	language:C++	namespace:SimpleDate	typeref:typename:std::string
+output	src/Modules/SimpleTime.cpp	/^    std::string output = "";$/;"	v	language:C++	namespace:SimpleTime	typeref:typename:std::string
+readFirstLine	src/Utils/FileUtils.cpp	/^    std::string readFirstLine(std::ifstream& file) {$/;"	f	language:C++	namespace:FileUtils	typeref:typename:std::string
+readFromSocket	src/Utils/BspwmUtils.cpp	/^    void readFromSocket(int& fd, std::string* str) {$/;"	f	language:C++	namespace:BspwmUtils	typeref:typename:void
+rightModules	src/Main.cpp	/^std::vector<std::string> rightModules;$/;"	v	language:C++	typeref:typename:std::vector<std::string>
+rightPadding	src/Main.cpp	/^std::string rightPadding;$/;"	v	language:C++	typeref:typename:std::string
+seperator	src/Main.cpp	/^std::string seperator;$/;"	v	language:C++	typeref:typename:std::string
+setBatteryPath	src/Modules/Battery.cpp	/^    void setBatteryPath() {$/;"	f	language:C++	namespace:Battery	typeref:typename:void
+setModuleMap	src/Main.cpp	/^void setModuleMap() {$/;"	f	language:C++	typeref:typename:void
+setOutputStringforPosition	src/Main.cpp	/^void setOutputStringforPosition(std::vector<std::string> posModules, std::string& position) {$/;"	f	language:C++	typeref:typename:void
+setPadding	src/Main.cpp	/^void setPadding(const std::string& amount, std::string& position) {$/;"	f	language:C++	typeref:typename:void
+setPosModulesVector	src/Main.cpp	/^void setPosModulesVector(std::vector<std::string>& posModule, const std::string& property, const/;"	f	language:C++	typeref:typename:void
+setPropertiesFromConfig	src/Main.cpp	/^void setPropertiesFromConfig() {$/;"	f	language:C++	typeref:typename:void
+setPropertiesFromConfig	src/Modules/Network.cpp	/^    void setPropertiesFromConfig() {$/;"	f	language:C++	namespace:Network	typeref:typename:void
+setWifiEthSysfs	src/Modules/Network.cpp	/^    void setWifiEthSysfs() {$/;"	f	language:C++	namespace:Network	typeref:typename:void
+showNetworkName	src/Modules/Network.cpp	/^    static bool showNetworkName;$/;"	v	language:C++	namespace:Network	typeref:typename:bool	file:
+status	src/Modules/Bspwm.cpp	/^    static std::string status;$/;"	v	language:C++	namespace:Bspwm	typeref:typename:std::string	file:
+strip	src/Utils/ConfigUtils.cpp	/^    std::string strip(std::string str) {$/;"	f	language:C++	namespace:ConfigUtils	typeref:typename:std::string
+subscribe	src/Utils/BspwmUtils.cpp	/^    void subscribe(int& fd) {$/;"	f	language:C++	namespace:BspwmUtils	typeref:typename:void
+updateOutput	src/Main.cpp	/^void updateOutput() {$/;"	f	language:C++	typeref:typename:void
+wifiSysfs	src/Modules/Network.cpp	/^    static std::string wifiSysfs;$/;"	v	language:C++	namespace:Network	typeref:typename:std::string	file:

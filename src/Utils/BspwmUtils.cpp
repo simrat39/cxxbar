@@ -21,7 +21,7 @@ namespace BspwmUtils {
     }
 
     void readFromSocket(int& fd, std::string* str) {
-        char buf[100];
+        char buf[1000];
         read(fd , buf , sizeof(buf));
         *str = buf;
     }
