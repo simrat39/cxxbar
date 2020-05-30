@@ -7,109 +7,251 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/0c78c0c4/
-$(OUT)	Makefile	/^$(OUT): $(OBJ)$/;"	t	language:Make
-Battery	src/Modules/Battery.cpp	/^namespace Battery {$/;"	n	language:C++	file:
-Battery	src/Modules/Battery.h	/^namespace Battery {$/;"	n	language:C++
-Bspwm	src/Modules/Bspwm.cpp	/^namespace Bspwm {$/;"	n	language:C++	file:
-Bspwm	src/Modules/Bspwm.h	/^namespace Bspwm {$/;"	n	language:C++
-BspwmLooper	src/Modules/Bspwm.cpp	/^    void BspwmLooper() {$/;"	f	language:C++	namespace:Bspwm	typeref:typename:void
-BspwmUtils	src/Utils/BspwmUtils.cpp	/^namespace BspwmUtils {$/;"	n	language:C++	file:
-BspwmUtils	src/Utils/BspwmUtils.h	/^namespace BspwmUtils {$/;"	n	language:C++
-CXX	Makefile	/^CXX = g++$/;"	m	language:Make
-ConfigUtils	src/Utils/ConfigUtils.cpp	/^namespace ConfigUtils {$/;"	n	language:C++	file:
-ConfigUtils	src/Utils/ConfigUtils.h	/^namespace ConfigUtils {$/;"	n	language:C++
-CustomDateTime	src/Modules/DateTime.cpp	/^namespace CustomDateTime {$/;"	n	language:C++	file:
-CustomDateTime	src/Modules/DateTime.h	/^namespace CustomDateTime {$/;"	n	language:C++
-CustomLooper	src/Modules/DateTime.cpp	/^void CustomLooper(DateTime tm) {$/;"	f	language:C++	typeref:typename:void
-DateTime	src/Modules/DateTime.h	/^        DateTime(const std::string& name,const std::string& format,const int& sleep) : m_Name(na/;"	f	language:C++	class:DateTime
-DateTime	src/Modules/DateTime.h	/^class DateTime {$/;"	c	language:C++
-DirectoryOfThisScript	.ycm_extra_conf.py	/^def DirectoryOfThisScript():$/;"	f	language:Python
-FileUtils	src/Utils/FileUtils.cpp	/^namespace FileUtils {$/;"	n	language:C++	file:
-FileUtils	src/Utils/FileUtils.h	/^namespace FileUtils {$/;"	n	language:C++
-FlagsForFile	.ycm_extra_conf.py	/^def FlagsForFile( filename, **kwargs ):$/;"	f	language:Python
-GetCompilationInfoForFile	.ycm_extra_conf.py	/^def GetCompilationInfoForFile( filename ):$/;"	f	language:Python
-IsHeaderFile	.ycm_extra_conf.py	/^def IsHeaderFile( filename ):$/;"	f	language:Python
-LDLIBS	Makefile	/^LDLIBS = -pthread -lgio-2.0 -lgobject-2.0 -lglib-2.0$/;"	m	language:Make
-MakeRelativePathsInFlagsAbsolute	.ycm_extra_conf.py	/^def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):$/;"	f	language:Python
-Network	src/Modules/Network.cpp	/^namespace Network {$/;"	n	language:C++	file:
-Network	src/Modules/Network.h	/^namespace Network {$/;"	n	language:C++
-OBJ	Makefile	/^OBJ := $(SRC:.cpp=.o)$/;"	m	language:Make
-OUT	Makefile	/^OUT = a.out $/;"	m	language:Make
-SOURCE_EXTENSIONS	.ycm_extra_conf.py	/^SOURCE_EXTENSIONS = [ '.C', '.cpp', '.cxx', '.cc', '.c', '.m', '.mm' ]$/;"	v	language:Python
-SRC	Makefile	/^SRC = $(wildcard src\/Modules\/*.cpp) $(wildcard src\/Utils\/*.cpp) $(wildcard src\/*.cpp)$/;"	m	language:Make
-Settings	.ycm_extra_conf.py	/^def Settings( **kwargs ):$/;"	f	language:Python
-SimpleDate	src/Modules/SimpleDate.cpp	/^namespace SimpleDate {$/;"	n	language:C++	file:
-SimpleDate	src/Modules/SimpleDate.h	/^namespace SimpleDate {$/;"	n	language:C++
-SimpleTime	src/Modules/SimpleTime.cpp	/^namespace SimpleTime {$/;"	n	language:C++	file:
-SimpleTime	src/Modules/SimpleTime.h	/^namespace SimpleTime {$/;"	n	language:C++
-batteryPath	src/Modules/Battery.cpp	/^    static std::string batteryPath = "\/sys\/class\/power_supply\/BAT0";$/;"	v	language:C++	namespace:Battery	typeref:typename:std::string	file:
-centerModules	src/Main.cpp	/^std::vector<std::string> centerModules;$/;"	v	language:C++	typeref:typename:std::vector<std::string>
-clean	Makefile	/^clean:$/;"	t	language:Make
-compilation_database_folder	.ycm_extra_conf.py	/^compilation_database_folder = ''$/;"	v	language:Python
-connect	src/Utils/BspwmUtils.cpp	/^    int connect() {$/;"	f	language:C++	namespace:BspwmUtils	typeref:typename:int
-database	.ycm_extra_conf.py	/^  database = ycm_core.CompilationDatabase( compilation_database_folder )$/;"	v	language:Python
-doesFileExist	src/Utils/FileUtils.cpp	/^    bool doesFileExist(const std::ifstream& file) {$/;"	f	language:C++	namespace:FileUtils	typeref:typename:bool
-dt_map	src/Main.cpp	/^std::map<std::string,DateTime*> dt_map = CustomDateTime::make_date_time_map(dt_vector);$/;"	v	language:C++	typeref:typename:std::map<std::string,DateTime * >
-dt_vector	src/Main.cpp	/^std::vector<DateTime*> dt_vector = CustomDateTime::make_date_time_vector();$/;"	v	language:C++	typeref:typename:std::vector<DateTime * >
-dummy	src/Main.cpp	/^void dummy() {$/;"	f	language:C++	typeref:typename:void
-ethSysfs	src/Modules/Network.cpp	/^    static std::string ethSysfs;$/;"	v	language:C++	namespace:Network	typeref:typename:std::string	file:
-flags	.ycm_extra_conf.py	/^flags = [$/;"	v	language:Python
-foldersInDirectory	src/Modules/Network.cpp	/^    int foldersInDirectory(const std::string& path) {$/;"	f	language:C++	namespace:Network	typeref:typename:int
-funcPtr	src/Main.cpp	/^typedef std::string(*funcPtr)();$/;"	t	language:C++	typeref:typename:std::string (*)()	file:
-funcPtr	src/Utils/BspwmUtils.cpp	/^    typedef void(*funcPtr)(std::string);$/;"	t	language:C++	namespace:BspwmUtils	typeref:typename:void (*)(std::string)	file:
-funcPtr	src/Utils/BspwmUtils.h	/^    typedef void(*funcPtr)(std::string);$/;"	t	language:C++	namespace:BspwmUtils	typeref:typename:void (*)(std::string)
-getBatteryStatus	src/Modules/Battery.cpp	/^    std::string getBatteryStatus() {$/;"	f	language:C++	namespace:Battery	typeref:typename:std::string
-getBspwmStatus	src/Modules/Bspwm.cpp	/^    std::string getBspwmStatus() {$/;"	f	language:C++	namespace:Bspwm	typeref:typename:std::string
-getDate	src/Modules/DateTime.cpp	/^std::string DateTime::getDate(){$/;"	f	language:C++	class:DateTime	typeref:typename:std::string
-getDate	src/Modules/SimpleDate.cpp	/^    std::string getDate() {$/;"	f	language:C++	namespace:SimpleDate	typeref:typename:std::string
-getEndingNameStartingWith	src/Utils/ConfigUtils.cpp	/^    std::vector<std::string> getEndingNameStartingWith(const std::string &str) {$/;"	f	language:C++	namespace:ConfigUtils	typeref:typename:std::vector<std::string>
-getFocusedWS	src/Utils/BspwmUtils.cpp	/^    std::string getFocusedWS(int fd) {$/;"	f	language:C++	namespace:BspwmUtils	typeref:typename:std::string
-getName	src/Modules/DateTime.cpp	/^std::string DateTime::getName() {$/;"	f	language:C++	class:DateTime	typeref:typename:std::string
-getNetworkName	src/Modules/Network.cpp	/^    char* getNetworkName() {$/;"	f	language:C++	namespace:Network	typeref:typename:char *
-getNetworkStatus	src/Modules/Network.cpp	/^    std::string getNetworkStatus(const char* networkName) {$/;"	f	language:C++	namespace:Network	typeref:typename:std::string
-getOutput	src/Modules/Battery.cpp	/^    std::string getOutput() {$/;"	f	language:C++	namespace:Battery	typeref:typename:std::string
-getOutput	src/Modules/Bspwm.cpp	/^    std::string getOutput() {$/;"	f	language:C++	namespace:Bspwm	typeref:typename:std::string
-getOutput	src/Modules/DateTime.cpp	/^std::string DateTime::getOutput() {$/;"	f	language:C++	class:DateTime	typeref:typename:std::string
-getOutput	src/Modules/Network.cpp	/^    std::string getOutput() {$/;"	f	language:C++	namespace:Network	typeref:typename:std::string
-getOutput	src/Modules/SimpleDate.cpp	/^    std::string getOutput() {$/;"	f	language:C++	namespace:SimpleDate	typeref:typename:std::string
-getOutput	src/Modules/SimpleTime.cpp	/^    std::string getOutput() {$/;"	f	language:C++	namespace:SimpleTime	typeref:typename:std::string
-getSleepTime	src/Modules/DateTime.cpp	/^int DateTime::getSleepTime() {$/;"	f	language:C++	class:DateTime	typeref:typename:int
-getTime	src/Modules/SimpleTime.cpp	/^    std::string getTime() {$/;"	f	language:C++	namespace:SimpleTime	typeref:typename:std::string
-getValue	src/Utils/ConfigUtils.cpp	/^    std::string getValue(const std::string &key , const std::string &defaultVal) {$/;"	f	language:C++	namespace:ConfigUtils	typeref:typename:std::string
-leftModules	src/Main.cpp	/^std::vector<std::string> leftModules;$/;"	v	language:C++	typeref:typename:std::vector<std::string>
-leftPadding	src/Main.cpp	/^std::string leftPadding;$/;"	v	language:C++	typeref:typename:std::string
-looper	src/Main.cpp	/^void looper(int sleepTime, funcPtr func) {$/;"	f	language:C++	typeref:typename:void
-m_Format	src/Modules/DateTime.h	/^        std::string m_Format;$/;"	m	language:C++	class:DateTime	typeref:typename:std::string
-m_Name	src/Modules/DateTime.h	/^        std::string m_Name;$/;"	m	language:C++	class:DateTime	typeref:typename:std::string
-m_SleepTime	src/Modules/DateTime.h	/^        int m_SleepTime;$/;"	m	language:C++	class:DateTime	typeref:typename:int
-main	src/Main.cpp	/^int main() {$/;"	f	language:C++	typeref:typename:int
-make_date_time_map	src/Modules/DateTime.cpp	/^    std::map<std::string, DateTime*> make_date_time_map(const std::vector<DateTime*>& dtVec) {$/;"	f	language:C++	namespace:CustomDateTime	typeref:typename:std::map<std::string,DateTime * >
-make_date_time_threads	src/Modules/DateTime.cpp	/^    std::vector<std::thread> make_date_time_threads(const std::vector<DateTime*>& dtVec) {$/;"	f	language:C++	namespace:CustomDateTime	typeref:typename:std::vector<std::thread>
-make_date_time_vector	src/Modules/DateTime.cpp	/^    std::vector<DateTime*> make_date_time_vector() {$/;"	f	language:C++	namespace:CustomDateTime	typeref:typename:std::vector<DateTime * >
-modulesMap	src/Main.cpp	/^static std::map<std::string , funcPtr> modulesMap;$/;"	v	language:C++	typeref:typename:std::map<std::string,funcPtr>	file:
-networkLooper	src/Modules/Network.cpp	/^    void networkLooper() {$/;"	f	language:C++	namespace:Network	typeref:typename:void
-output	src/Modules/Battery.cpp	/^    static std::string output = "";$/;"	v	language:C++	namespace:Battery	typeref:typename:std::string	file:
-output	src/Modules/Bspwm.cpp	/^    static std::string output = "";$/;"	v	language:C++	namespace:Bspwm	typeref:typename:std::string	file:
-output	src/Modules/DateTime.h	/^        std::string output;$/;"	m	language:C++	class:DateTime	typeref:typename:std::string
-output	src/Modules/Network.cpp	/^    static std::string output = "";$/;"	v	language:C++	namespace:Network	typeref:typename:std::string	file:
-output	src/Modules/SimpleDate.cpp	/^    std::string output = "";$/;"	v	language:C++	namespace:SimpleDate	typeref:typename:std::string
-output	src/Modules/SimpleTime.cpp	/^    std::string output = "";$/;"	v	language:C++	namespace:SimpleTime	typeref:typename:std::string
-readFirstLine	src/Utils/FileUtils.cpp	/^    std::string readFirstLine(std::ifstream& file) {$/;"	f	language:C++	namespace:FileUtils	typeref:typename:std::string
-readFromSocket	src/Utils/BspwmUtils.cpp	/^    void readFromSocket(int& fd, std::string* str) {$/;"	f	language:C++	namespace:BspwmUtils	typeref:typename:void
-rightModules	src/Main.cpp	/^std::vector<std::string> rightModules;$/;"	v	language:C++	typeref:typename:std::vector<std::string>
-rightPadding	src/Main.cpp	/^std::string rightPadding;$/;"	v	language:C++	typeref:typename:std::string
-seperator	src/Main.cpp	/^std::string seperator;$/;"	v	language:C++	typeref:typename:std::string
-setBatteryPath	src/Modules/Battery.cpp	/^    void setBatteryPath() {$/;"	f	language:C++	namespace:Battery	typeref:typename:void
-setModuleMap	src/Main.cpp	/^void setModuleMap() {$/;"	f	language:C++	typeref:typename:void
-setOutputStringforPosition	src/Main.cpp	/^void setOutputStringforPosition(std::vector<std::string> posModules, std::string& position) {$/;"	f	language:C++	typeref:typename:void
-setPadding	src/Main.cpp	/^void setPadding(const std::string& amount, std::string& position) {$/;"	f	language:C++	typeref:typename:void
-setPosModulesVector	src/Main.cpp	/^void setPosModulesVector(std::vector<std::string>& posModule, const std::string& property, const/;"	f	language:C++	typeref:typename:void
-setPropertiesFromConfig	src/Main.cpp	/^void setPropertiesFromConfig() {$/;"	f	language:C++	typeref:typename:void
-setPropertiesFromConfig	src/Modules/Network.cpp	/^    void setPropertiesFromConfig() {$/;"	f	language:C++	namespace:Network	typeref:typename:void
-setWifiEthSysfs	src/Modules/Network.cpp	/^    void setWifiEthSysfs() {$/;"	f	language:C++	namespace:Network	typeref:typename:void
-showNetworkName	src/Modules/Network.cpp	/^    static bool showNetworkName;$/;"	v	language:C++	namespace:Network	typeref:typename:bool	file:
-status	src/Modules/Bspwm.cpp	/^    static std::string status;$/;"	v	language:C++	namespace:Bspwm	typeref:typename:std::string	file:
-strip	src/Utils/ConfigUtils.cpp	/^    std::string strip(std::string str) {$/;"	f	language:C++	namespace:ConfigUtils	typeref:typename:std::string
-subscribe	src/Utils/BspwmUtils.cpp	/^    void subscribe(int& fd) {$/;"	f	language:C++	namespace:BspwmUtils	typeref:typename:void
-updateOutput	src/Main.cpp	/^void updateOutput() {$/;"	f	language:C++	typeref:typename:void
-wifiSysfs	src/Modules/Network.cpp	/^    static std::string wifiSysfs;$/;"	v	language:C++	namespace:Network	typeref:typename:std::string	file:
+$(OUT)	Makefile	/^$(OUT): $(OBJ)$/;"	t
+0	compile_commands.json	/^            "g++",$/;"	s	array:0.arguments
+0	compile_commands.json	/^            "g++",$/;"	s	array:1.arguments
+0	compile_commands.json	/^            "g++",$/;"	s	array:2.arguments
+0	compile_commands.json	/^            "g++",$/;"	s	array:3.arguments
+0	compile_commands.json	/^            "g++",$/;"	s	array:4.arguments
+0	compile_commands.json	/^            "g++",$/;"	s	array:5.arguments
+0	compile_commands.json	/^            "g++",$/;"	s	array:6.arguments
+0	compile_commands.json	/^            "g++",$/;"	s	array:7.arguments
+0	compile_commands.json	/^            "g++",$/;"	s	array:8.arguments
+0	compile_commands.json	/^            "g++",$/;"	s	array:9.arguments
+0	compile_commands.json	/^    {$/;"	o
+1	compile_commands.json	/^            "-c",$/;"	s	array:0.arguments
+1	compile_commands.json	/^            "-c",$/;"	s	array:1.arguments
+1	compile_commands.json	/^            "-c",$/;"	s	array:2.arguments
+1	compile_commands.json	/^            "-c",$/;"	s	array:3.arguments
+1	compile_commands.json	/^            "-c",$/;"	s	array:4.arguments
+1	compile_commands.json	/^            "-c",$/;"	s	array:5.arguments
+1	compile_commands.json	/^            "-c",$/;"	s	array:6.arguments
+1	compile_commands.json	/^            "-c",$/;"	s	array:7.arguments
+1	compile_commands.json	/^            "-c",$/;"	s	array:8.arguments
+1	compile_commands.json	/^            "-c",$/;"	s	array:9.arguments
+1	compile_commands.json	/^    {$/;"	o
+10	compile_commands.json	/^            "-o",$/;"	s	array:0.arguments
+10	compile_commands.json	/^            "-o",$/;"	s	array:1.arguments
+10	compile_commands.json	/^            "-o",$/;"	s	array:2.arguments
+10	compile_commands.json	/^            "-o",$/;"	s	array:3.arguments
+10	compile_commands.json	/^            "-o",$/;"	s	array:4.arguments
+10	compile_commands.json	/^            "-o",$/;"	s	array:5.arguments
+10	compile_commands.json	/^            "-o",$/;"	s	array:6.arguments
+10	compile_commands.json	/^            "-o",$/;"	s	array:7.arguments
+10	compile_commands.json	/^            "-o",$/;"	s	array:8.arguments
+10	compile_commands.json	/^            "-o",$/;"	s	array:9.arguments
+11	compile_commands.json	/^            "src\/Main.o",$/;"	s	array:3.arguments
+11	compile_commands.json	/^            "src\/Modules\/Battery.o",$/;"	s	array:2.arguments
+11	compile_commands.json	/^            "src\/Modules\/Bspwm.o",$/;"	s	array:4.arguments
+11	compile_commands.json	/^            "src\/Modules\/DateTime.o",$/;"	s	array:7.arguments
+11	compile_commands.json	/^            "src\/Modules\/Network.o",$/;"	s	array:0.arguments
+11	compile_commands.json	/^            "src\/Modules\/SimpleDate.o",$/;"	s	array:8.arguments
+11	compile_commands.json	/^            "src\/Modules\/SimpleTime.o",$/;"	s	array:6.arguments
+11	compile_commands.json	/^            "src\/Utils\/BspwmUtils.o",$/;"	s	array:9.arguments
+11	compile_commands.json	/^            "src\/Utils\/ConfigUtils.o",$/;"	s	array:5.arguments
+11	compile_commands.json	/^            "src\/Utils\/FileUtils.o",$/;"	s	array:1.arguments
+12	compile_commands.json	/^            "src\/Main.cpp"$/;"	s	array:3.arguments
+12	compile_commands.json	/^            "src\/Modules\/Battery.cpp"$/;"	s	array:2.arguments
+12	compile_commands.json	/^            "src\/Modules\/Bspwm.cpp"$/;"	s	array:4.arguments
+12	compile_commands.json	/^            "src\/Modules\/DateTime.cpp"$/;"	s	array:7.arguments
+12	compile_commands.json	/^            "src\/Modules\/Network.cpp"$/;"	s	array:0.arguments
+12	compile_commands.json	/^            "src\/Modules\/SimpleDate.cpp"$/;"	s	array:8.arguments
+12	compile_commands.json	/^            "src\/Modules\/SimpleTime.cpp"$/;"	s	array:6.arguments
+12	compile_commands.json	/^            "src\/Utils\/BspwmUtils.cpp"$/;"	s	array:9.arguments
+12	compile_commands.json	/^            "src\/Utils\/ConfigUtils.cpp"$/;"	s	array:5.arguments
+12	compile_commands.json	/^            "src\/Utils\/FileUtils.cpp"$/;"	s	array:1.arguments
+2	compile_commands.json	/^            "-O2",$/;"	s	array:0.arguments
+2	compile_commands.json	/^            "-O2",$/;"	s	array:1.arguments
+2	compile_commands.json	/^            "-O2",$/;"	s	array:2.arguments
+2	compile_commands.json	/^            "-O2",$/;"	s	array:3.arguments
+2	compile_commands.json	/^            "-O2",$/;"	s	array:4.arguments
+2	compile_commands.json	/^            "-O2",$/;"	s	array:5.arguments
+2	compile_commands.json	/^            "-O2",$/;"	s	array:6.arguments
+2	compile_commands.json	/^            "-O2",$/;"	s	array:7.arguments
+2	compile_commands.json	/^            "-O2",$/;"	s	array:8.arguments
+2	compile_commands.json	/^            "-O2",$/;"	s	array:9.arguments
+2	compile_commands.json	/^    {$/;"	o
+3	compile_commands.json	/^            "-std=c++2a",$/;"	s	array:0.arguments
+3	compile_commands.json	/^            "-std=c++2a",$/;"	s	array:1.arguments
+3	compile_commands.json	/^            "-std=c++2a",$/;"	s	array:2.arguments
+3	compile_commands.json	/^            "-std=c++2a",$/;"	s	array:3.arguments
+3	compile_commands.json	/^            "-std=c++2a",$/;"	s	array:4.arguments
+3	compile_commands.json	/^            "-std=c++2a",$/;"	s	array:5.arguments
+3	compile_commands.json	/^            "-std=c++2a",$/;"	s	array:6.arguments
+3	compile_commands.json	/^            "-std=c++2a",$/;"	s	array:7.arguments
+3	compile_commands.json	/^            "-std=c++2a",$/;"	s	array:8.arguments
+3	compile_commands.json	/^            "-std=c++2a",$/;"	s	array:9.arguments
+3	compile_commands.json	/^    {$/;"	o
+4	compile_commands.json	/^            "-Iinclude\/",$/;"	s	array:0.arguments
+4	compile_commands.json	/^            "-Iinclude\/",$/;"	s	array:1.arguments
+4	compile_commands.json	/^            "-Iinclude\/",$/;"	s	array:2.arguments
+4	compile_commands.json	/^            "-Iinclude\/",$/;"	s	array:3.arguments
+4	compile_commands.json	/^            "-Iinclude\/",$/;"	s	array:4.arguments
+4	compile_commands.json	/^            "-Iinclude\/",$/;"	s	array:5.arguments
+4	compile_commands.json	/^            "-Iinclude\/",$/;"	s	array:6.arguments
+4	compile_commands.json	/^            "-Iinclude\/",$/;"	s	array:7.arguments
+4	compile_commands.json	/^            "-Iinclude\/",$/;"	s	array:8.arguments
+4	compile_commands.json	/^            "-Iinclude\/",$/;"	s	array:9.arguments
+4	compile_commands.json	/^    {$/;"	o
+5	compile_commands.json	/^            "-I\/usr\/include\/glib-2.0",$/;"	s	array:0.arguments
+5	compile_commands.json	/^            "-I\/usr\/include\/glib-2.0",$/;"	s	array:1.arguments
+5	compile_commands.json	/^            "-I\/usr\/include\/glib-2.0",$/;"	s	array:2.arguments
+5	compile_commands.json	/^            "-I\/usr\/include\/glib-2.0",$/;"	s	array:3.arguments
+5	compile_commands.json	/^            "-I\/usr\/include\/glib-2.0",$/;"	s	array:4.arguments
+5	compile_commands.json	/^            "-I\/usr\/include\/glib-2.0",$/;"	s	array:5.arguments
+5	compile_commands.json	/^            "-I\/usr\/include\/glib-2.0",$/;"	s	array:6.arguments
+5	compile_commands.json	/^            "-I\/usr\/include\/glib-2.0",$/;"	s	array:7.arguments
+5	compile_commands.json	/^            "-I\/usr\/include\/glib-2.0",$/;"	s	array:8.arguments
+5	compile_commands.json	/^            "-I\/usr\/include\/glib-2.0",$/;"	s	array:9.arguments
+5	compile_commands.json	/^    {$/;"	o
+6	compile_commands.json	/^            "-I\/usr\/lib\/glib-2.0\/include",$/;"	s	array:0.arguments
+6	compile_commands.json	/^            "-I\/usr\/lib\/glib-2.0\/include",$/;"	s	array:1.arguments
+6	compile_commands.json	/^            "-I\/usr\/lib\/glib-2.0\/include",$/;"	s	array:2.arguments
+6	compile_commands.json	/^            "-I\/usr\/lib\/glib-2.0\/include",$/;"	s	array:3.arguments
+6	compile_commands.json	/^            "-I\/usr\/lib\/glib-2.0\/include",$/;"	s	array:4.arguments
+6	compile_commands.json	/^            "-I\/usr\/lib\/glib-2.0\/include",$/;"	s	array:5.arguments
+6	compile_commands.json	/^            "-I\/usr\/lib\/glib-2.0\/include",$/;"	s	array:6.arguments
+6	compile_commands.json	/^            "-I\/usr\/lib\/glib-2.0\/include",$/;"	s	array:7.arguments
+6	compile_commands.json	/^            "-I\/usr\/lib\/glib-2.0\/include",$/;"	s	array:8.arguments
+6	compile_commands.json	/^            "-I\/usr\/lib\/glib-2.0\/include",$/;"	s	array:9.arguments
+6	compile_commands.json	/^    {$/;"	o
+7	compile_commands.json	/^            "-pthread",$/;"	s	array:0.arguments
+7	compile_commands.json	/^            "-pthread",$/;"	s	array:1.arguments
+7	compile_commands.json	/^            "-pthread",$/;"	s	array:2.arguments
+7	compile_commands.json	/^            "-pthread",$/;"	s	array:3.arguments
+7	compile_commands.json	/^            "-pthread",$/;"	s	array:4.arguments
+7	compile_commands.json	/^            "-pthread",$/;"	s	array:5.arguments
+7	compile_commands.json	/^            "-pthread",$/;"	s	array:6.arguments
+7	compile_commands.json	/^            "-pthread",$/;"	s	array:7.arguments
+7	compile_commands.json	/^            "-pthread",$/;"	s	array:8.arguments
+7	compile_commands.json	/^            "-pthread",$/;"	s	array:9.arguments
+7	compile_commands.json	/^    {$/;"	o
+8	compile_commands.json	/^            "-I\/usr\/include\/libmount",$/;"	s	array:0.arguments
+8	compile_commands.json	/^            "-I\/usr\/include\/libmount",$/;"	s	array:1.arguments
+8	compile_commands.json	/^            "-I\/usr\/include\/libmount",$/;"	s	array:2.arguments
+8	compile_commands.json	/^            "-I\/usr\/include\/libmount",$/;"	s	array:3.arguments
+8	compile_commands.json	/^            "-I\/usr\/include\/libmount",$/;"	s	array:4.arguments
+8	compile_commands.json	/^            "-I\/usr\/include\/libmount",$/;"	s	array:5.arguments
+8	compile_commands.json	/^            "-I\/usr\/include\/libmount",$/;"	s	array:6.arguments
+8	compile_commands.json	/^            "-I\/usr\/include\/libmount",$/;"	s	array:7.arguments
+8	compile_commands.json	/^            "-I\/usr\/include\/libmount",$/;"	s	array:8.arguments
+8	compile_commands.json	/^            "-I\/usr\/include\/libmount",$/;"	s	array:9.arguments
+8	compile_commands.json	/^    {$/;"	o
+9	compile_commands.json	/^            "-I\/usr\/include\/blkid",$/;"	s	array:0.arguments
+9	compile_commands.json	/^            "-I\/usr\/include\/blkid",$/;"	s	array:1.arguments
+9	compile_commands.json	/^            "-I\/usr\/include\/blkid",$/;"	s	array:2.arguments
+9	compile_commands.json	/^            "-I\/usr\/include\/blkid",$/;"	s	array:3.arguments
+9	compile_commands.json	/^            "-I\/usr\/include\/blkid",$/;"	s	array:4.arguments
+9	compile_commands.json	/^            "-I\/usr\/include\/blkid",$/;"	s	array:5.arguments
+9	compile_commands.json	/^            "-I\/usr\/include\/blkid",$/;"	s	array:6.arguments
+9	compile_commands.json	/^            "-I\/usr\/include\/blkid",$/;"	s	array:7.arguments
+9	compile_commands.json	/^            "-I\/usr\/include\/blkid",$/;"	s	array:8.arguments
+9	compile_commands.json	/^            "-I\/usr\/include\/blkid",$/;"	s	array:9.arguments
+9	compile_commands.json	/^    {$/;"	o
+Battery	src/Modules/Battery.cpp	/^namespace Battery {$/;"	n	file:
+Battery	src/Modules/Battery.h	/^namespace Battery {$/;"	n
+Bspwm	src/Modules/Bspwm.cpp	/^namespace Bspwm {$/;"	n	file:
+Bspwm	src/Modules/Bspwm.h	/^namespace Bspwm {$/;"	n
+BspwmLooper	src/Modules/Bspwm.cpp	/^    void BspwmLooper() {$/;"	f	namespace:Bspwm	typeref:typename:void
+BspwmUtils	src/Utils/BspwmUtils.cpp	/^namespace BspwmUtils {$/;"	n	file:
+BspwmUtils	src/Utils/BspwmUtils.h	/^namespace BspwmUtils {$/;"	n
+CXX	Makefile	/^CXX = g++$/;"	m
+ConfigUtils	src/Utils/ConfigUtils.cpp	/^namespace ConfigUtils {$/;"	n	file:
+ConfigUtils	src/Utils/ConfigUtils.h	/^namespace ConfigUtils {$/;"	n
+FileUtils	src/Utils/FileUtils.cpp	/^namespace FileUtils {$/;"	n	file:
+FileUtils	src/Utils/FileUtils.h	/^namespace FileUtils {$/;"	n
+LDLIBS	Makefile	/^LDLIBS = -pthread -lgio-2.0 -lgobject-2.0 -lglib-2.0$/;"	m
+Network	src/Modules/Network.cpp	/^namespace Network {$/;"	n	file:
+Network	src/Modules/Network.h	/^namespace Network {$/;"	n
+OBJ	Makefile	/^OBJ := $(SRC:.cpp=.o)$/;"	m
+OUT	Makefile	/^OUT = a.out $/;"	m
+SRC	Makefile	/^SRC = $(wildcard src\/Modules\/*.cpp) $(wildcard src\/Utils\/*.cpp) $(wildcard src\/*.cpp)$/;"	m
+SimpleDate	src/Modules/SimpleDate.cpp	/^namespace SimpleDate {$/;"	n	file:
+SimpleDate	src/Modules/SimpleDate.h	/^namespace SimpleDate {$/;"	n
+SimpleTime	src/Modules/SimpleTime.cpp	/^namespace SimpleTime {$/;"	n	file:
+SimpleTime	src/Modules/SimpleTime.h	/^namespace SimpleTime {$/;"	n
+arguments	compile_commands.json	/^        "arguments": [$/;"	a	object:0
+arguments	compile_commands.json	/^        "arguments": [$/;"	a	object:1
+arguments	compile_commands.json	/^        "arguments": [$/;"	a	object:2
+arguments	compile_commands.json	/^        "arguments": [$/;"	a	object:3
+arguments	compile_commands.json	/^        "arguments": [$/;"	a	object:4
+arguments	compile_commands.json	/^        "arguments": [$/;"	a	object:5
+arguments	compile_commands.json	/^        "arguments": [$/;"	a	object:6
+arguments	compile_commands.json	/^        "arguments": [$/;"	a	object:7
+arguments	compile_commands.json	/^        "arguments": [$/;"	a	object:8
+arguments	compile_commands.json	/^        "arguments": [$/;"	a	object:9
+batteryPath	src/Modules/Battery.cpp	/^    static std::string batteryPath = "\/sys\/class\/power_supply\/BAT0";$/;"	v	namespace:Battery	typeref:typename:std::string	file:
+centerModules	src/Main.cpp	/^std::vector<std::string> centerModules;$/;"	v	typeref:typename:std::vector<std::string>
+clean	Makefile	/^clean:$/;"	t
+connect	src/Utils/BspwmUtils.cpp	/^    int connect() {$/;"	f	namespace:BspwmUtils	typeref:typename:int
+directory	compile_commands.json	/^        "directory": "\/home\/simrat39\/cxxbar",$/;"	s	object:0
+directory	compile_commands.json	/^        "directory": "\/home\/simrat39\/cxxbar",$/;"	s	object:1
+directory	compile_commands.json	/^        "directory": "\/home\/simrat39\/cxxbar",$/;"	s	object:2
+directory	compile_commands.json	/^        "directory": "\/home\/simrat39\/cxxbar",$/;"	s	object:3
+directory	compile_commands.json	/^        "directory": "\/home\/simrat39\/cxxbar",$/;"	s	object:4
+directory	compile_commands.json	/^        "directory": "\/home\/simrat39\/cxxbar",$/;"	s	object:5
+directory	compile_commands.json	/^        "directory": "\/home\/simrat39\/cxxbar",$/;"	s	object:6
+directory	compile_commands.json	/^        "directory": "\/home\/simrat39\/cxxbar",$/;"	s	object:7
+directory	compile_commands.json	/^        "directory": "\/home\/simrat39\/cxxbar",$/;"	s	object:8
+directory	compile_commands.json	/^        "directory": "\/home\/simrat39\/cxxbar",$/;"	s	object:9
+doesFileExist	src/Utils/FileUtils.cpp	/^    bool doesFileExist(const std::ifstream& file) {$/;"	f	namespace:FileUtils	typeref:typename:bool
+dummy	src/Main.cpp	/^void dummy() {$/;"	f	typeref:typename:void
+ethSysfs	src/Modules/Network.cpp	/^    static std::string ethSysfs;$/;"	v	namespace:Network	typeref:typename:std::string	file:
+file	compile_commands.json	/^        "file": "src\/Main.cpp"$/;"	s	object:3
+file	compile_commands.json	/^        "file": "src\/Modules\/Battery.cpp"$/;"	s	object:2
+file	compile_commands.json	/^        "file": "src\/Modules\/Bspwm.cpp"$/;"	s	object:4
+file	compile_commands.json	/^        "file": "src\/Modules\/DateTime.cpp"$/;"	s	object:7
+file	compile_commands.json	/^        "file": "src\/Modules\/Network.cpp"$/;"	s	object:0
+file	compile_commands.json	/^        "file": "src\/Modules\/SimpleDate.cpp"$/;"	s	object:8
+file	compile_commands.json	/^        "file": "src\/Modules\/SimpleTime.cpp"$/;"	s	object:6
+file	compile_commands.json	/^        "file": "src\/Utils\/BspwmUtils.cpp"$/;"	s	object:9
+file	compile_commands.json	/^        "file": "src\/Utils\/ConfigUtils.cpp"$/;"	s	object:5
+file	compile_commands.json	/^        "file": "src\/Utils\/FileUtils.cpp"$/;"	s	object:1
+foldersInDirectory	src/Modules/Network.cpp	/^    int foldersInDirectory(const std::string& path) {$/;"	f	namespace:Network	typeref:typename:int
+funcPtr	src/Main.cpp	/^typedef std::string(*funcPtr)();$/;"	t	typeref:typename:std::string (*)()	file:
+funcPtr	src/Utils/BspwmUtils.cpp	/^    typedef void(*funcPtr)(std::string);$/;"	t	namespace:BspwmUtils	typeref:typename:void (*)(std::string)	file:
+funcPtr	src/Utils/BspwmUtils.h	/^    typedef void(*funcPtr)(std::string);$/;"	t	namespace:BspwmUtils	typeref:typename:void (*)(std::string)
+getBatteryStatus	src/Modules/Battery.cpp	/^    std::string getBatteryStatus() {$/;"	f	namespace:Battery	typeref:typename:std::string
+getBspwmStatus	src/Modules/Bspwm.cpp	/^    std::string getBspwmStatus() {$/;"	f	namespace:Bspwm	typeref:typename:std::string
+getDate	src/Modules/SimpleDate.cpp	/^    std::string getDate() {$/;"	f	namespace:SimpleDate	typeref:typename:std::string
+getEndingNameStartingWith	src/Utils/ConfigUtils.cpp	/^    std::vector<std::string> getEndingNameStartingWith(const std::string &str) {$/;"	f	namespace:ConfigUtils	typeref:typename:std::vector<std::string>
+getFocusedWS	src/Utils/BspwmUtils.cpp	/^    std::string getFocusedWS(int fd) {$/;"	f	namespace:BspwmUtils	typeref:typename:std::string
+getNetworkName	src/Modules/Network.cpp	/^    char* getNetworkName() {$/;"	f	namespace:Network	typeref:typename:char *
+getNetworkStatus	src/Modules/Network.cpp	/^    std::string getNetworkStatus(const char* networkName) {$/;"	f	namespace:Network	typeref:typename:std::string
+getOutput	src/Modules/Battery.cpp	/^    std::string getOutput() {$/;"	f	namespace:Battery	typeref:typename:std::string
+getOutput	src/Modules/Bspwm.cpp	/^    std::string getOutput() {$/;"	f	namespace:Bspwm	typeref:typename:std::string
+getOutput	src/Modules/Network.cpp	/^    std::string getOutput() {$/;"	f	namespace:Network	typeref:typename:std::string
+getOutput	src/Modules/SimpleDate.cpp	/^    std::string getOutput() {$/;"	f	namespace:SimpleDate	typeref:typename:std::string
+getOutput	src/Modules/SimpleTime.cpp	/^    std::string getOutput() {$/;"	f	namespace:SimpleTime	typeref:typename:std::string
+getTime	src/Modules/SimpleTime.cpp	/^    std::string getTime() {$/;"	f	namespace:SimpleTime	typeref:typename:std::string
+getValue	src/Utils/ConfigUtils.cpp	/^    std::string getValue(const std::string &key , const std::string &defaultVal) {$/;"	f	namespace:ConfigUtils	typeref:typename:std::string
+leftModules	src/Main.cpp	/^std::vector<std::string> leftModules;$/;"	v	typeref:typename:std::vector<std::string>
+leftPadding	src/Main.cpp	/^std::string leftPadding;$/;"	v	typeref:typename:std::string
+looper	src/Main.cpp	/^void looper(int sleepTime, funcPtr func) {$/;"	f	typeref:typename:void
+main	src/Main.cpp	/^int main() {$/;"	f	typeref:typename:int
+modulesMap	src/Main.cpp	/^static std::map<std::string , funcPtr> modulesMap;$/;"	v	typeref:typename:std::map<std::string,funcPtr>	file:
+networkLooper	src/Modules/Network.cpp	/^    void networkLooper() {$/;"	f	namespace:Network	typeref:typename:void
+output	src/Modules/Battery.cpp	/^    static std::string output = "";$/;"	v	namespace:Battery	typeref:typename:std::string	file:
+output	src/Modules/Bspwm.cpp	/^    static std::string output = "";$/;"	v	namespace:Bspwm	typeref:typename:std::string	file:
+output	src/Modules/Network.cpp	/^    static std::string output = "";$/;"	v	namespace:Network	typeref:typename:std::string	file:
+output	src/Modules/SimpleDate.cpp	/^    std::string output = "";$/;"	v	namespace:SimpleDate	typeref:typename:std::string
+output	src/Modules/SimpleTime.cpp	/^    std::string output = "";$/;"	v	namespace:SimpleTime	typeref:typename:std::string
+readFirstLine	src/Utils/FileUtils.cpp	/^    std::string readFirstLine(std::ifstream& file) {$/;"	f	namespace:FileUtils	typeref:typename:std::string
+readFromSocket	src/Utils/BspwmUtils.cpp	/^    void readFromSocket(int& fd, std::string* str) {$/;"	f	namespace:BspwmUtils	typeref:typename:void
+rightModules	src/Main.cpp	/^std::vector<std::string> rightModules;$/;"	v	typeref:typename:std::vector<std::string>
+rightPadding	src/Main.cpp	/^std::string rightPadding;$/;"	v	typeref:typename:std::string
+seperator	src/Main.cpp	/^std::string seperator;$/;"	v	typeref:typename:std::string
+setBatteryPath	src/Modules/Battery.cpp	/^    void setBatteryPath() {$/;"	f	namespace:Battery	typeref:typename:void
+setModuleMap	src/Main.cpp	/^void setModuleMap() {$/;"	f	typeref:typename:void
+setOutputStringforPosition	src/Main.cpp	/^void setOutputStringforPosition(std::vector<std::string> posModules, std::string& position) {$/;"	f	typeref:typename:void
+setPadding	src/Main.cpp	/^void setPadding(const std::string& amount, std::string& position) {$/;"	f	typeref:typename:void
+setPosModulesVector	src/Main.cpp	/^void setPosModulesVector(std::vector<std::string>& posModule, const std::string& property, const/;"	f	typeref:typename:void
+setPropertiesFromConfig	src/Main.cpp	/^void setPropertiesFromConfig() {$/;"	f	typeref:typename:void
+setPropertiesFromConfig	src/Modules/Network.cpp	/^    void setPropertiesFromConfig() {$/;"	f	namespace:Network	typeref:typename:void
+setWifiEthSysfs	src/Modules/Network.cpp	/^    void setWifiEthSysfs() {$/;"	f	namespace:Network	typeref:typename:void
+showNetworkName	src/Modules/Network.cpp	/^    static bool showNetworkName;$/;"	v	namespace:Network	typeref:typename:bool	file:
+status	src/Modules/Bspwm.cpp	/^    static std::string status;$/;"	v	namespace:Bspwm	typeref:typename:std::string	file:
+strip	src/Utils/ConfigUtils.cpp	/^    std::string strip(std::string str) {$/;"	f	namespace:ConfigUtils	typeref:typename:std::string
+subscribe	src/Utils/BspwmUtils.cpp	/^    void subscribe(int& fd) {$/;"	f	namespace:BspwmUtils	typeref:typename:void
+updateOutput	src/Main.cpp	/^void updateOutput() {$/;"	f	typeref:typename:void
+wifiSysfs	src/Modules/Network.cpp	/^    static std::string wifiSysfs;$/;"	v	namespace:Network	typeref:typename:std::string	file:

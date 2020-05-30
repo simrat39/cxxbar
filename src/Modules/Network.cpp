@@ -72,6 +72,7 @@ namespace Network {
         return output;
     }
 
+    // Return the final output string
     std::string getOutput() {
         return output;
     }

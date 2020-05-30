@@ -1,3 +1,4 @@
+#include <any>
 #include <iostream>
 #include <thread>
 #include <map>
@@ -8,7 +9,6 @@
 #include "Modules/Bspwm.h"
 #include "Modules/SimpleDate.h"
 #include "Modules/SimpleTime.h"
-#include "Modules/DateTime.h"
 
 #include "Utils/ConfigUtils.h"
 
@@ -27,10 +27,6 @@ std::string seperator;
 std::string leftPadding;
 std::string rightPadding;
 // Main Properties end
-
-// Dynamic modules
-std::vector<DateTime*> dt_vector = CustomDateTime::make_date_time_vector();
-std::map<std::string,DateTime*> dt_map = CustomDateTime::make_date_time_map(dt_vector);
 
 void setPosModulesVector(std::vector<std::string>& posModule, const std::string& property, const std::string& defaultValue) {
     std::string posModuleFromConfig = ConfigUtils::getValue(property,defaultValue);
@@ -79,9 +75,6 @@ void setOutputStringforPosition(std::vector<std::string> posModules, std::string
         for (int i = 0; i < sizeOfArr; i++) {
             if (modulesMap.find(posModules[i]) != modulesMap.end()) {
                 posModules[i] != "" ? position += i == sizeOfArr - 1 ? modulesMap[(posModules)[i]]() : modulesMap[(posModules)[i]]() + seperator : position += "";
-            } else if (dt_map.find(posModules[i]) != dt_map.end()) {
-                dt_map[(posModules)[i]]->getDate();
-                posModules[i] != "" ? position += i == sizeOfArr - 1 ? dt_map[(posModules)[i]]->getOutput() : dt_map[(posModules)[i]]->getOutput() + seperator : position += "";
             }    
         }
     }
@@ -150,9 +143,6 @@ int main() {
     }
 
     std::thread networkThread,batteryThread,bspwmThread,dateThread,timeThread;
-    std::vector<std::thread> dtthread;
-    if (dt_vector.size())
-        dtthread = CustomDateTime::make_date_time_threads(dt_vector);
 
     if (allModules.find("Network") != std::string::npos) {
         networkThread = std::thread(Network::networkLooper); 
