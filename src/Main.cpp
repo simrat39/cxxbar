@@ -9,6 +9,7 @@
 #include "Modules/Bspwm.h"
 #include "Modules/SimpleDate.h"
 #include "Modules/SimpleTime.h"
+#include "Modules/Script.h"
 
 #include "Utils/ConfigUtils.h"
 
@@ -27,6 +28,10 @@ std::string seperator;
 std::string leftPadding;
 std::string rightPadding;
 // Main Properties end
+
+// Custom Modules
+std::vector<Script*> script_module_vector = ScriptModule::make_script_vector();
+std::map<std::string, Script*> script_module_map = ScriptModule::make_script_map(script_module_vector);
 
 void setPosModulesVector(std::vector<std::string>& posModule, const std::string& property, const std::string& defaultValue) {
     std::string posModuleFromConfig = ConfigUtils::getValue(property,defaultValue);
@@ -75,7 +80,9 @@ void setOutputStringforPosition(std::vector<std::string> posModules, std::string
         for (int i = 0; i < sizeOfArr; i++) {
             if (modulesMap.find(posModules[i]) != modulesMap.end()) {
                 posModules[i] != "" ? position += i == sizeOfArr - 1 ? modulesMap[(posModules)[i]]() : modulesMap[(posModules)[i]]() + seperator : position += "";
-            }    
+            } else if (script_module_map.find(posModules[i]) != script_module_map.end()) {
+                posModules[i] != "" ? position += i == sizeOfArr - 1 ? script_module_map[(posModules)[i]]->getOutput() : script_module_map[(posModules)[i]]->getOutput() + seperator : position += "";
+            }      
         }
     }
 }
@@ -127,6 +134,7 @@ void dummy() {
 }
 
 int main() {
+    
     setModuleMap();
     setPropertiesFromConfig();
 
@@ -142,7 +150,11 @@ int main() {
         allModules += i + " ";
     }
 
-    std::thread networkThread,batteryThread,bspwmThread,dateThread,timeThread;
+    std::thread networkThread,batteryThread,bspwmThread,dateThread,timeThread,simThread;
+    std::vector<std::thread> script_module_threads_vector;
+    if (script_module_vector.size()) {
+        script_module_threads_vector = ScriptModule::make_script_threads(script_module_vector);
+    }
 
     if (allModules.find("Network") != std::string::npos) {
         networkThread = std::thread(Network::networkLooper); 
@@ -156,7 +168,7 @@ int main() {
     } if (allModules.find("SimpleTime") != std::string::npos) {
         timeThread = std::thread(looper, 1000 , SimpleTime::getTime);
     }
- 
+
     std::thread dummyThread(dummy);
     dummyThread.join();
     return 0;

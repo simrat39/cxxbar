@@ -20,13 +20,13 @@ namespace ConfigUtils {
         std::string line;
         while (getline(file,line)) {
             std::string l_key = ConfigUtils::strip(line.substr(0,line.find("=")));
-            std::string l_value = ConfigUtils::strip(line.substr(line.find("=") + 1,sizeof(line)));
+            std::string l_value = ConfigUtils::strip(line.substr(line.find("=") + 1));
             if (l_key == key) {
                 file.close();
                 return l_value;
             }
         }
-        file.close();        
+        file.close(); 
         return defaultVal;
     }
 

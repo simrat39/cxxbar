@@ -166,6 +166,10 @@ Network	src/Modules/Network.h	/^namespace Network {$/;"	n
 OBJ	Makefile	/^OBJ := $(SRC:.cpp=.o)$/;"	m
 OUT	Makefile	/^OUT = a.out $/;"	m
 SRC	Makefile	/^SRC = $(wildcard src\/Modules\/*.cpp) $(wildcard src\/Utils\/*.cpp) $(wildcard src\/*.cpp)$/;"	m
+Script	src/Modules/Script.h	/^        Script(const std::string &name, const std::string &script, const int &sleepTime) : m_Nam/;"	f	class:Script
+Script	src/Modules/Script.h	/^class Script {$/;"	c
+ScriptModule	src/Modules/Script.cpp	/^namespace ScriptModule {$/;"	n	file:
+ScriptModule	src/Modules/Script.h	/^namespace ScriptModule {$/;"	n
 SimpleDate	src/Modules/SimpleDate.cpp	/^namespace SimpleDate {$/;"	n	file:
 SimpleDate	src/Modules/SimpleDate.h	/^namespace SimpleDate {$/;"	n
 SimpleTime	src/Modules/SimpleTime.cpp	/^namespace SimpleTime {$/;"	n	file:
@@ -216,11 +220,13 @@ getBspwmStatus	src/Modules/Bspwm.cpp	/^    std::string getBspwmStatus() {$/;"	f	
 getDate	src/Modules/SimpleDate.cpp	/^    std::string getDate() {$/;"	f	namespace:SimpleDate	typeref:typename:std::string
 getEndingNameStartingWith	src/Utils/ConfigUtils.cpp	/^    std::vector<std::string> getEndingNameStartingWith(const std::string &str) {$/;"	f	namespace:ConfigUtils	typeref:typename:std::vector<std::string>
 getFocusedWS	src/Utils/BspwmUtils.cpp	/^    std::string getFocusedWS(int fd) {$/;"	f	namespace:BspwmUtils	typeref:typename:std::string
+getName	src/Modules/Script.cpp	/^std::string Script::getName() { return m_Name; }$/;"	f	class:Script	typeref:typename:std::string
 getNetworkName	src/Modules/Network.cpp	/^    char* getNetworkName() {$/;"	f	namespace:Network	typeref:typename:char *
 getNetworkStatus	src/Modules/Network.cpp	/^    std::string getNetworkStatus(const char* networkName) {$/;"	f	namespace:Network	typeref:typename:std::string
 getOutput	src/Modules/Battery.cpp	/^    std::string getOutput() {$/;"	f	namespace:Battery	typeref:typename:std::string
 getOutput	src/Modules/Bspwm.cpp	/^    std::string getOutput() {$/;"	f	namespace:Bspwm	typeref:typename:std::string
 getOutput	src/Modules/Network.cpp	/^    std::string getOutput() {$/;"	f	namespace:Network	typeref:typename:std::string
+getOutput	src/Modules/Script.cpp	/^std::string Script::getOutput() { return output.substr(0,output.find("\\n")); }$/;"	f	class:Script	typeref:typename:std::string
 getOutput	src/Modules/SimpleDate.cpp	/^    std::string getOutput() {$/;"	f	namespace:SimpleDate	typeref:typename:std::string
 getOutput	src/Modules/SimpleTime.cpp	/^    std::string getOutput() {$/;"	f	namespace:SimpleTime	typeref:typename:std::string
 getTime	src/Modules/SimpleTime.cpp	/^    std::string getTime() {$/;"	f	namespace:SimpleTime	typeref:typename:std::string
@@ -228,18 +234,29 @@ getValue	src/Utils/ConfigUtils.cpp	/^    std::string getValue(const std::string 
 leftModules	src/Main.cpp	/^std::vector<std::string> leftModules;$/;"	v	typeref:typename:std::vector<std::string>
 leftPadding	src/Main.cpp	/^std::string leftPadding;$/;"	v	typeref:typename:std::string
 looper	src/Main.cpp	/^void looper(int sleepTime, funcPtr func) {$/;"	f	typeref:typename:void
+looper	src/Modules/Script.cpp	/^    void looper(Script& st) {$/;"	f	namespace:ScriptModule	typeref:typename:void
+m_Name	src/Modules/Script.h	/^        std::string m_Name;$/;"	m	class:Script	typeref:typename:std::string
+m_Script	src/Modules/Script.h	/^        std::string m_Script;$/;"	m	class:Script	typeref:typename:std::string
+m_SleepTime	src/Modules/Script.h	/^        int m_SleepTime;$/;"	m	class:Script	typeref:typename:int
 main	src/Main.cpp	/^int main() {$/;"	f	typeref:typename:int
+make_script_map	src/Modules/Script.cpp	/^    std::map<std::string, Script*> make_script_map(std::vector<Script*> &sc_vec) {$/;"	f	namespace:ScriptModule	typeref:typename:std::map<std::string,Script * >
+make_script_threads	src/Modules/Script.cpp	/^    std::vector<std::thread> make_script_threads(std::vector<Script*> &sc_vec) {$/;"	f	namespace:ScriptModule	typeref:typename:std::vector<std::thread>
+make_script_vector	src/Modules/Script.cpp	/^    std::vector<Script*> make_script_vector() {$/;"	f	namespace:ScriptModule	typeref:typename:std::vector<Script * >
 modulesMap	src/Main.cpp	/^static std::map<std::string , funcPtr> modulesMap;$/;"	v	typeref:typename:std::map<std::string,funcPtr>	file:
 networkLooper	src/Modules/Network.cpp	/^    void networkLooper() {$/;"	f	namespace:Network	typeref:typename:void
 output	src/Modules/Battery.cpp	/^    static std::string output = "";$/;"	v	namespace:Battery	typeref:typename:std::string	file:
 output	src/Modules/Bspwm.cpp	/^    static std::string output = "";$/;"	v	namespace:Bspwm	typeref:typename:std::string	file:
 output	src/Modules/Network.cpp	/^    static std::string output = "";$/;"	v	namespace:Network	typeref:typename:std::string	file:
+output	src/Modules/Script.h	/^        std::string output;$/;"	m	class:Script	typeref:typename:std::string
 output	src/Modules/SimpleDate.cpp	/^    std::string output = "";$/;"	v	namespace:SimpleDate	typeref:typename:std::string
 output	src/Modules/SimpleTime.cpp	/^    std::string output = "";$/;"	v	namespace:SimpleTime	typeref:typename:std::string
 readFirstLine	src/Utils/FileUtils.cpp	/^    std::string readFirstLine(std::ifstream& file) {$/;"	f	namespace:FileUtils	typeref:typename:std::string
 readFromSocket	src/Utils/BspwmUtils.cpp	/^    void readFromSocket(int& fd, std::string* str) {$/;"	f	namespace:BspwmUtils	typeref:typename:void
 rightModules	src/Main.cpp	/^std::vector<std::string> rightModules;$/;"	v	typeref:typename:std::vector<std::string>
 rightPadding	src/Main.cpp	/^std::string rightPadding;$/;"	v	typeref:typename:std::string
+runCmd	src/Modules/Script.cpp	/^std::string Script::runCmd(const std::string &cmd) {$/;"	f	class:Script	typeref:typename:std::string
+script_module_map	src/Main.cpp	/^std::map<std::string, Script*> script_module_map = ScriptModule::make_script_map(script_module_v/;"	v	typeref:typename:std::map<std::string,Script * >
+script_module_vector	src/Main.cpp	/^std::vector<Script*> script_module_vector = ScriptModule::make_script_vector();$/;"	v	typeref:typename:std::vector<Script * >
 seperator	src/Main.cpp	/^std::string seperator;$/;"	v	typeref:typename:std::string
 setBatteryPath	src/Modules/Battery.cpp	/^    void setBatteryPath() {$/;"	f	namespace:Battery	typeref:typename:void
 setModuleMap	src/Main.cpp	/^void setModuleMap() {$/;"	f	typeref:typename:void
