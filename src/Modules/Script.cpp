@@ -36,7 +36,6 @@ namespace ScriptModule {
                 vec.push_back(new Script(i, ConfigUtils::getValue(i + "-command", "echo \"command not found\""), std::stoi(ConfigUtils::getValue(i + "-sleep", "1000"))));
             }
         }
-
         return vec;
     }
 
@@ -57,7 +56,6 @@ namespace ScriptModule {
     }
     
 }
-
     
 std::string Script::getName() { return m_Name; }
 
@@ -70,7 +68,8 @@ std::string Script::runCmd(const std::string &cmd) {
     auto pipe = popen(cmd.c_str(), "r");
 
     while (!feof(pipe)) {
-        result="";
+        if (m_SleepTime == -1)
+            result="";
         if (fgets(buffer.data(), 128, pipe) != nullptr) {
             result += buffer.data();
         }
