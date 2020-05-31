@@ -66,6 +66,8 @@ std::string Script::runCmd(const std::string &cmd) {
     std::array<char, 128> buffer;
 
     auto pipe = popen(cmd.c_str(), "r");
+    if (!pipe)
+        return "";
 
     while (!feof(pipe)) {
         if (fgets(buffer.data(), 128, pipe) != nullptr) {
