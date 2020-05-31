@@ -59,7 +59,7 @@ namespace ScriptModule {
     
 std::string Script::getName() { return m_Name; }
 
-std::string Script::getOutput() { return output.substr(0,output.find("\n")); }
+std::string Script::getOutput() { return output; }
 
 std::string Script::runCmd(const std::string &cmd) {
     std::string result;
@@ -68,13 +68,15 @@ std::string Script::runCmd(const std::string &cmd) {
     auto pipe = popen(cmd.c_str(), "r");
 
     while (!feof(pipe)) {
-        if (m_SleepTime == -1)
-            result="";
         if (fgets(buffer.data(), 128, pipe) != nullptr) {
-            result += buffer.data();
+            result = buffer.data();
+            result = result.substr(0,result.find("\n"));
         }
         this->output = result;
-        updateOutput();
+        if (m_SleepTime == -1) {
+            result="";
+            updateOutput();
+        }
     }
 
     auto rc = pclose(pipe);

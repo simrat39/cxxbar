@@ -226,7 +226,7 @@ getNetworkStatus	src/Modules/Network.cpp	/^    std::string getNetworkStatus(cons
 getOutput	src/Modules/Battery.cpp	/^    std::string getOutput() {$/;"	f	namespace:Battery	typeref:typename:std::string
 getOutput	src/Modules/Bspwm.cpp	/^    std::string getOutput() {$/;"	f	namespace:Bspwm	typeref:typename:std::string
 getOutput	src/Modules/Network.cpp	/^    std::string getOutput() {$/;"	f	namespace:Network	typeref:typename:std::string
-getOutput	src/Modules/Script.cpp	/^std::string Script::getOutput() { return output.substr(0,output.find("\\n")); }$/;"	f	class:Script	typeref:typename:std::string
+getOutput	src/Modules/Script.cpp	/^std::string Script::getOutput() { return output; }$/;"	f	class:Script	typeref:typename:std::string
 getOutput	src/Modules/SimpleDate.cpp	/^    std::string getOutput() {$/;"	f	namespace:SimpleDate	typeref:typename:std::string
 getOutput	src/Modules/SimpleTime.cpp	/^    std::string getOutput() {$/;"	f	namespace:SimpleTime	typeref:typename:std::string
 getTime	src/Modules/SimpleTime.cpp	/^    std::string getTime() {$/;"	f	namespace:SimpleTime	typeref:typename:std::string
