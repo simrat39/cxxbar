@@ -74,7 +74,6 @@ std::string Script::runCmd(const std::string &cmd) {
             result += buffer.data();
         }
         this->output = result;
-        std::clog << output << "\n";
         updateOutput();
     }
 
