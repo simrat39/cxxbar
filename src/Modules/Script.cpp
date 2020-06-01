@@ -33,7 +33,15 @@ namespace ScriptModule {
 
         for (std::string& i : ConfigUtils::getEndingNameStartingWith("module-")) {
             if (ConfigUtils::getValue(i + "-type", "None") == "Script") {
-                vec.push_back(new Script(i, ConfigUtils::getValue(i + "-command", "echo \"command not found\""), std::stoi(ConfigUtils::getValue(i + "-sleep", "1000"))));
+                vec.push_back(new Script(
+                            i,
+                            ConfigUtils::getValue(i + "-command", "echo \"command not found\""),
+                            std::stoi(ConfigUtils::getValue(i + "-sleep", "1000")),
+                            ConfigUtils::getValue(i + "-left-click", ""),
+                            ConfigUtils::getValue(i + "-right-click", ""),
+                            ConfigUtils::getValue(i + "-middle-click", ""),
+                            ConfigUtils::getValue(i + "-scroll-up", ""),
+                            ConfigUtils::getValue(i + "-scroll-down", "")));
             }
         }
         return vec;
@@ -56,10 +64,11 @@ namespace ScriptModule {
     }
     
 }
-    
+
+
 std::string Script::getName() { return m_Name; }
 
-std::string Script::getOutput() { return output; }
+std::string Script::getOutput() { return pre + output + post; }
 
 std::string Script::runCmd(const std::string &cmd) {
     std::string result;

@@ -44,4 +44,20 @@ namespace ConfigUtils {
         file.close();
         return vec;        
     }
+
+    void parsePrePostStrings(const std::string &left_click,const std::string &right_click,
+            const std::string &middle_click,const std::string &scroll_up,const std::string &scroll_down,
+            std::string &pre,std::string &post) {
+        std::string arr[5] = {left_click,right_click,middle_click,scroll_up,scroll_down};
+        pre = "";
+        post = "";
+        int count = 1;
+        for (auto i : arr) {
+            if (!i.empty()) {
+                pre += "%{A" + std::to_string(count) + ":" + i + ":}";
+                post += "%{A}";
+            }
+            count++;
+        }
+    }
 }
