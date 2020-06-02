@@ -10,11 +10,10 @@
 class Script {
     private:
         std::string m_Name;
-
-    public:
-        std::string m_Script;
-        int m_SleepTime;
+        // Clicking events , 1 - 5
         std::string m_left_click, m_right_click, m_middle_click, m_scroll_up, m_scroll_down;
+        // Colors
+        std::string m_underline_color, m_background_color, m_text_color;
         // Output strings
         // Main output string
         std::string output;
@@ -22,17 +21,22 @@ class Script {
         std::string pre;
         // Suffix to output
         std::string post;
+    public:
+        std::string m_Script;
+        int m_SleepTime;
         
-        inline Script(const std::string &name, const std::string &script, const int &sleepTime, const std::string& left_click,
-                const std::string& right_click,const std::string& middle_click, const std::string& scroll_up, const std::string& scroll_down)
-            : m_Name(name), m_Script(script), m_SleepTime(sleepTime), m_left_click(left_click), m_right_click(right_click),
-            m_middle_click(middle_click), m_scroll_up(scroll_up), m_scroll_down(scroll_down) {
+        inline Script(const std::string &name, const std::string &script, const int &sleepTime,
+                const std::string& left_click, const std::string& right_click, const std::string& middle_click,
+                const std::string& scroll_up, const std::string& scroll_down, const std::string& underline_color,
+                const std::string& background_color, const std::string& foreground_color)
+            : m_Name(name), m_Script(script), m_SleepTime(sleepTime), m_left_click(left_click),
+                m_right_click(right_click), m_middle_click(middle_click), m_scroll_up(scroll_up),
+                m_scroll_down(scroll_down), m_underline_color(underline_color), m_background_color(background_color), m_text_color(foreground_color) {
                 
-            ConfigUtils::parsePrePostStrings(m_left_click, m_right_click, m_middle_click, m_scroll_up, m_scroll_down, pre, post);
+            ConfigUtils::parsePrePostStrings(m_left_click, m_right_click, m_middle_click, m_scroll_up, m_scroll_down,
+                                                pre, post, m_underline_color, m_background_color, m_text_color);
         }
 
-        /* Script(); */
-    
         std::string getName(); 
 
         std::string getOutput();

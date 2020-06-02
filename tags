@@ -166,7 +166,7 @@ Network	src/Modules/Network.h	/^namespace Network {$/;"	n
 OBJ	Makefile	/^OBJ := $(SRC:.cpp=.o)$/;"	m
 OUT	Makefile	/^OUT = a.out $/;"	m
 SRC	Makefile	/^SRC = $(wildcard src\/Modules\/*.cpp) $(wildcard src\/Utils\/*.cpp) $(wildcard src\/*.cpp)$/;"	m
-Script	src/Modules/Script.h	/^        inline Script(const std::string &name, const std::string &script, const int &sleepTime, /;"	f	class:Script
+Script	src/Modules/Script.h	/^        inline Script(const std::string &name, const std::string &script, const int &sleepTime,$/;"	f	class:Script
 Script	src/Modules/Script.h	/^class Script {$/;"	c
 ScriptModule	src/Modules/Script.cpp	/^namespace ScriptModule {$/;"	n	file:
 ScriptModule	src/Modules/Script.h	/^namespace ScriptModule {$/;"	n
@@ -238,11 +238,14 @@ looper	src/Modules/Script.cpp	/^    void looper(Script& st) {$/;"	f	namespace:Sc
 m_Name	src/Modules/Script.h	/^        std::string m_Name;$/;"	m	class:Script	typeref:typename:std::string
 m_Script	src/Modules/Script.h	/^        std::string m_Script;$/;"	m	class:Script	typeref:typename:std::string
 m_SleepTime	src/Modules/Script.h	/^        int m_SleepTime;$/;"	m	class:Script	typeref:typename:int
+m_background_color	src/Modules/Script.h	/^        std::string m_underline_color, m_background_color, m_text_color;$/;"	m	class:Script	typeref:typename:std::string
 m_left_click	src/Modules/Script.h	/^        std::string m_left_click, m_right_click, m_middle_click, m_scroll_up, m_scroll_down;$/;"	m	class:Script	typeref:typename:std::string
 m_middle_click	src/Modules/Script.h	/^        std::string m_left_click, m_right_click, m_middle_click, m_scroll_up, m_scroll_down;$/;"	m	class:Script	typeref:typename:std::string
 m_right_click	src/Modules/Script.h	/^        std::string m_left_click, m_right_click, m_middle_click, m_scroll_up, m_scroll_down;$/;"	m	class:Script	typeref:typename:std::string
 m_scroll_down	src/Modules/Script.h	/^        std::string m_left_click, m_right_click, m_middle_click, m_scroll_up, m_scroll_down;$/;"	m	class:Script	typeref:typename:std::string
 m_scroll_up	src/Modules/Script.h	/^        std::string m_left_click, m_right_click, m_middle_click, m_scroll_up, m_scroll_down;$/;"	m	class:Script	typeref:typename:std::string
+m_text_color	src/Modules/Script.h	/^        std::string m_underline_color, m_background_color, m_text_color;$/;"	m	class:Script	typeref:typename:std::string
+m_underline_color	src/Modules/Script.h	/^        std::string m_underline_color, m_background_color, m_text_color;$/;"	m	class:Script	typeref:typename:std::string
 main	src/Main.cpp	/^int main() {$/;"	f	typeref:typename:int
 make_script_map	src/Modules/Script.cpp	/^    std::map<std::string, Script*> make_script_map(std::vector<Script*> &sc_vec) {$/;"	f	namespace:ScriptModule	typeref:typename:std::map<std::string,Script * >
 make_script_threads	src/Modules/Script.cpp	/^    std::vector<std::thread> make_script_threads(std::vector<Script*> &sc_vec) {$/;"	f	namespace:ScriptModule	typeref:typename:std::vector<std::thread>
@@ -255,7 +258,7 @@ output	src/Modules/Network.cpp	/^    static std::string output = "";$/;"	v	names
 output	src/Modules/Script.h	/^        std::string output;$/;"	m	class:Script	typeref:typename:std::string
 output	src/Modules/SimpleDate.cpp	/^    std::string output = "";$/;"	v	namespace:SimpleDate	typeref:typename:std::string
 output	src/Modules/SimpleTime.cpp	/^    std::string output = "";$/;"	v	namespace:SimpleTime	typeref:typename:std::string
-parsePrePostStrings	src/Utils/ConfigUtils.cpp	/^    void parsePrePostStrings(const std::string &left_click,const std::string &right_click,$/;"	f	namespace:ConfigUtils	typeref:typename:void
+parsePrePostStrings	src/Utils/ConfigUtils.cpp	/^    void parsePrePostStrings(const std::string &left_click, const std::string &right_click,$/;"	f	namespace:ConfigUtils	typeref:typename:void
 post	src/Modules/Script.h	/^        std::string post;$/;"	m	class:Script	typeref:typename:std::string
 pre	src/Modules/Script.h	/^        std::string pre;$/;"	m	class:Script	typeref:typename:std::string
 readFirstLine	src/Utils/FileUtils.cpp	/^    std::string readFirstLine(std::ifstream& file) {$/;"	f	namespace:FileUtils	typeref:typename:std::string

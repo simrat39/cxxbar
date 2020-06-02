@@ -45,19 +45,35 @@ namespace ConfigUtils {
         return vec;        
     }
 
-    void parsePrePostStrings(const std::string &left_click,const std::string &right_click,
-            const std::string &middle_click,const std::string &scroll_up,const std::string &scroll_down,
-            std::string &pre,std::string &post) {
-        std::string arr[5] = {left_click,right_click,middle_click,scroll_up,scroll_down};
+    void parsePrePostStrings(const std::string &left_click, const std::string &right_click,
+            const std::string &middle_click, const std::string &scroll_up, const std::string &scroll_down,
+            std::string &pre, std::string &post, std::string& underline_color, std::string &background_color, std::string& foreground_color) {
+        std::string clicks[5] = {left_click,right_click,middle_click,scroll_up,scroll_down};
+        std::string colors[3] = {underline_color, background_color, foreground_color};
+        std::string color_prefixes[3] = {"U","B","F"};
         pre = "";
         post = "";
         int count = 1;
-        for (auto i : arr) {
+        for (auto i : clicks) {
             if (!i.empty()) {
                 pre += "%{A" + std::to_string(count) + ":" + i + ":}";
                 post += "%{A}";
             }
             count++;
         }
+        
+        count = 0;
+        for (auto i : colors) {
+            if (!i.empty()) {
+                if (count == 0) {
+                    pre += "%{+u}";
+                    post += "%{-u}";
+                }
+                pre += "%{" + color_prefixes[count] + i + "}";
+                post += "%{" + color_prefixes[count] + "-}";
+            }
+            count++;
+        }
+    
     }
 }

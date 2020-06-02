@@ -41,7 +41,10 @@ namespace ScriptModule {
                             ConfigUtils::getValue(i + "-right-click", ""),
                             ConfigUtils::getValue(i + "-middle-click", ""),
                             ConfigUtils::getValue(i + "-scroll-up", ""),
-                            ConfigUtils::getValue(i + "-scroll-down", "")));
+                            ConfigUtils::getValue(i + "-scroll-down", ""),
+                            ConfigUtils::getValue(i + "-underline-color", ""),
+                            ConfigUtils::getValue(i + "-background-color", ""),
+                            ConfigUtils::getValue(i + "-foreground-color", "")));
             }
         }
         return vec;
