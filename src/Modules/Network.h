@@ -1,12 +1,12 @@
 namespace Network {
-    
-    void setPropertiesFromConfig();
 
-    std::string getNetworkStatus(const char* networkName);
+void setPropertiesFromConfig();
 
-    std::string getOutput();
+std::string getNetworkStatus(const char *networkName);
 
-    char* getNetworkName();
+std::string getOutput();
 
-    void networkLooper();
-}
+char *getNetworkName();
+
+void networkLooper();
+} // namespace Network

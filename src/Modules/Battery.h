@@ -1,10 +1,10 @@
 #include <string>
 
 namespace Battery {
-    
-    void setBatteryPath();
 
-    std::string getBatteryStatus();
+void setBatteryPath();
 
-    std::string getOutput();
-}
+std::string getBatteryStatus();
+
+std::string getOutput();
+} // namespace Battery

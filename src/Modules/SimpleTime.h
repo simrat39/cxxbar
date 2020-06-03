@@ -2,7 +2,7 @@
 
 namespace SimpleTime {
 
-    std::string getTime();
+std::string getTime();
 
-    std::string getOutput();
-}
+std::string getOutput();
+} // namespace SimpleTime

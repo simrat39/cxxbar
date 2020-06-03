@@ -2,7 +2,7 @@
 
 namespace SimpleDate {
 
-    std::string getDate();
+std::string getDate();
 
-    std::string getOutput();
-}
+std::string getOutput();
+} // namespace SimpleDate

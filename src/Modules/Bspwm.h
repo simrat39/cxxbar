@@ -2,10 +2,10 @@
 
 namespace Bspwm {
 
-    void BspwmLooper();
+void BspwmLooper();
 
-    std::string getBspwmStatus();
+std::string getBspwmStatus();
 
-    std::string getOutput();
+std::string getOutput();
 
-}
+} // namespace Bspwm
