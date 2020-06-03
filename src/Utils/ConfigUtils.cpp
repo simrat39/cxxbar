@@ -31,6 +31,12 @@ std::string getValue(const std::string &key, const std::string &defaultVal) {
   return defaultVal;
 }
 
+std::string getValueWithQuotes(const std::string &key,
+                               const std::string &defaultVal) {
+  std::string val = ConfigUtils::getValue(key, defaultVal);
+  return val.substr(1, val.size() - 2);
+}
+
 std::vector<std::string> getEndingNameStartingWith(const std::string &str) {
   std::ifstream file(std::string(getenv("HOME")) +
                      std::string("/.config/cxxbar/conf"));
@@ -59,8 +65,6 @@ void parsePrePostStrings(const std::string &left_click,
                            scroll_down};
   std::string colors[3] = {underline_color, background_color, foreground_color};
   std::string color_prefixes[3] = {"U", "B", "F"};
-  pre = "";
-  post = "";
   int count = 1;
   for (auto i : clicks) {
     if (!i.empty()) {

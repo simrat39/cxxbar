@@ -7,6 +7,9 @@ std::string strip(std::string str);
 
 std::string getValue(const std::string &key, const std::string &defaultVal);
 
+std::string getValueWithQuotes(const std::string &key,
+                               const std::string &defaultVal);
+
 std::vector<std::string> getEndingNameStartingWith(const std::string &str);
 
 void parsePrePostStrings(const std::string &left_click,

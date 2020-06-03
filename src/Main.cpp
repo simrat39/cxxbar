@@ -51,8 +51,7 @@ void setPosModulesVector(std::vector<std::string> &posModule,
 
 void setPropertiesFromConfig() {
   // seperator
-  std::string seperatorVal = ConfigUtils::getValue("seperator", "\"  |  \"");
-  seperator = seperatorVal.substr(1, seperatorVal.size() - 2);
+  seperator = ConfigUtils::getValueWithQuotes("seperator", "\"  |  \"");
 
   // padding
   leftPadding = ConfigUtils::getValue("padding-left", "2");

@@ -43,7 +43,8 @@ std::vector<Script *> make_script_vector() {
           ConfigUtils::getValue(i + "-scroll-down", ""),
           ConfigUtils::getValue(i + "-underline-color", ""),
           ConfigUtils::getValue(i + "-background-color", ""),
-          ConfigUtils::getValue(i + "-foreground-color", "")));
+          ConfigUtils::getValue(i + "-foreground-color", ""),
+          ConfigUtils::getValueWithQuotes(i + "-format", "<output>")));
     }
   }
   return vec;
@@ -63,6 +64,20 @@ std::map<std::string, Script *> make_script_map(std::vector<Script *> &sc_vec) {
     map[i->getName()] = i;
   }
   return map;
+}
+
+void format_output_str_pre(std::string &pre, const std::string &format_this) {
+  int index = format_this.find("<output>");
+  if (index == std::string::npos)
+    return;
+  pre += format_this.substr(0, index);
+}
+
+void format_output_str_post(std::string &post, const std::string &format_this) {
+  int index = format_this.find("<output>");
+  if (index == std::string::npos)
+    return;
+  post = format_this.substr(index + 8);
 }
 
 } // namespace ScriptModule

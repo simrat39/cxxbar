@@ -12,144 +12,11 @@
             "-I/usr/include/libmount",
             "-I/usr/include/blkid",
             "-o",
-            "src/Modules/Network.o",
-            "src/Modules/Network.cpp"
+            "src/Utils/BspwmUtils.o",
+            "src/Utils/BspwmUtils.cpp"
         ],
         "directory": "/home/simrat39/cxxbar",
-        "file": "src/Modules/Network.cpp"
-    },
-    {
-        "arguments": [
-            "g++",
-            "-c",
-            "-O2",
-            "-std=c++2a",
-            "-Iinclude/",
-            "-I/usr/include/glib-2.0",
-            "-I/usr/lib/glib-2.0/include",
-            "-pthread",
-            "-I/usr/include/libmount",
-            "-I/usr/include/blkid",
-            "-o",
-            "src/Utils/FileUtils.o",
-            "src/Utils/FileUtils.cpp"
-        ],
-        "directory": "/home/simrat39/cxxbar",
-        "file": "src/Utils/FileUtils.cpp"
-    },
-    {
-        "arguments": [
-            "g++",
-            "-c",
-            "-O2",
-            "-std=c++2a",
-            "-Iinclude/",
-            "-I/usr/include/glib-2.0",
-            "-I/usr/lib/glib-2.0/include",
-            "-pthread",
-            "-I/usr/include/libmount",
-            "-I/usr/include/blkid",
-            "-o",
-            "src/Modules/Battery.o",
-            "src/Modules/Battery.cpp"
-        ],
-        "directory": "/home/simrat39/cxxbar",
-        "file": "src/Modules/Battery.cpp"
-    },
-    {
-        "arguments": [
-            "g++",
-            "-c",
-            "-O2",
-            "-std=c++2a",
-            "-Iinclude/",
-            "-I/usr/include/glib-2.0",
-            "-I/usr/lib/glib-2.0/include",
-            "-pthread",
-            "-I/usr/include/libmount",
-            "-I/usr/include/blkid",
-            "-o",
-            "src/Main.o",
-            "src/Main.cpp"
-        ],
-        "directory": "/home/simrat39/cxxbar",
-        "file": "src/Main.cpp"
-    },
-    {
-        "arguments": [
-            "g++",
-            "-c",
-            "-O2",
-            "-std=c++2a",
-            "-Iinclude/",
-            "-I/usr/include/glib-2.0",
-            "-I/usr/lib/glib-2.0/include",
-            "-pthread",
-            "-I/usr/include/libmount",
-            "-I/usr/include/blkid",
-            "-o",
-            "src/Modules/Bspwm.o",
-            "src/Modules/Bspwm.cpp"
-        ],
-        "directory": "/home/simrat39/cxxbar",
-        "file": "src/Modules/Bspwm.cpp"
-    },
-    {
-        "arguments": [
-            "g++",
-            "-c",
-            "-O2",
-            "-std=c++2a",
-            "-Iinclude/",
-            "-I/usr/include/glib-2.0",
-            "-I/usr/lib/glib-2.0/include",
-            "-pthread",
-            "-I/usr/include/libmount",
-            "-I/usr/include/blkid",
-            "-o",
-            "src/Utils/ConfigUtils.o",
-            "src/Utils/ConfigUtils.cpp"
-        ],
-        "directory": "/home/simrat39/cxxbar",
-        "file": "src/Utils/ConfigUtils.cpp"
-    },
-    {
-        "arguments": [
-            "g++",
-            "-c",
-            "-O2",
-            "-std=c++2a",
-            "-Iinclude/",
-            "-I/usr/include/glib-2.0",
-            "-I/usr/lib/glib-2.0/include",
-            "-pthread",
-            "-I/usr/include/libmount",
-            "-I/usr/include/blkid",
-            "-o",
-            "src/Modules/SimpleTime.o",
-            "src/Modules/SimpleTime.cpp"
-        ],
-        "directory": "/home/simrat39/cxxbar",
-        "file": "src/Modules/SimpleTime.cpp"
-    },
-    {
-        "arguments": [
-            "g++",
-            "-c",
-            "-O2",
-            "-std=c++2a",
-            "-Iinclude/",
-            "-I/usr/include/glib-2.0",
-            "-I/usr/lib/glib-2.0/include",
-            "-pthread",
-            "-I/usr/include/libmount",
-            "-I/usr/include/blkid",
-            "-o",
-            "src/Modules/DateTime.o",
-            "src/Modules/DateTime.cpp"
-        ],
-        "directory": "/home/simrat39/cxxbar",
-        "file": "src/Modules/DateTime.cpp"
+        "file": "src/Utils/BspwmUtils.cpp"
     },
     {
         "arguments": [
@@ -183,10 +50,143 @@
             "-I/usr/include/libmount",
             "-I/usr/include/blkid",
             "-o",
-            "src/Utils/BspwmUtils.o",
-            "src/Utils/BspwmUtils.cpp"
+            "src/Modules/Battery.o",
+            "src/Modules/Battery.cpp"
         ],
         "directory": "/home/simrat39/cxxbar",
-        "file": "src/Utils/BspwmUtils.cpp"
+        "file": "src/Modules/Battery.cpp"
+    },
+    {
+        "arguments": [
+            "g++",
+            "-c",
+            "-O2",
+            "-std=c++2a",
+            "-Iinclude/",
+            "-I/usr/include/glib-2.0",
+            "-I/usr/lib/glib-2.0/include",
+            "-pthread",
+            "-I/usr/include/libmount",
+            "-I/usr/include/blkid",
+            "-o",
+            "src/Utils/ConfigUtils.o",
+            "src/Utils/ConfigUtils.cpp"
+        ],
+        "directory": "/home/simrat39/cxxbar",
+        "file": "src/Utils/ConfigUtils.cpp"
+    },
+    {
+        "arguments": [
+            "g++",
+            "-c",
+            "-O2",
+            "-std=c++2a",
+            "-Iinclude/",
+            "-I/usr/include/glib-2.0",
+            "-I/usr/lib/glib-2.0/include",
+            "-pthread",
+            "-I/usr/include/libmount",
+            "-I/usr/include/blkid",
+            "-o",
+            "src/Utils/FileUtils.o",
+            "src/Utils/FileUtils.cpp"
+        ],
+        "directory": "/home/simrat39/cxxbar",
+        "file": "src/Utils/FileUtils.cpp"
+    },
+    {
+        "arguments": [
+            "g++",
+            "-c",
+            "-O2",
+            "-std=c++2a",
+            "-Iinclude/",
+            "-I/usr/include/glib-2.0",
+            "-I/usr/lib/glib-2.0/include",
+            "-pthread",
+            "-I/usr/include/libmount",
+            "-I/usr/include/blkid",
+            "-o",
+            "src/Modules/Network.o",
+            "src/Modules/Network.cpp"
+        ],
+        "directory": "/home/simrat39/cxxbar",
+        "file": "src/Modules/Network.cpp"
+    },
+    {
+        "arguments": [
+            "g++",
+            "-c",
+            "-O2",
+            "-std=c++2a",
+            "-Iinclude/",
+            "-I/usr/include/glib-2.0",
+            "-I/usr/lib/glib-2.0/include",
+            "-pthread",
+            "-I/usr/include/libmount",
+            "-I/usr/include/blkid",
+            "-o",
+            "src/Modules/SimpleTime.o",
+            "src/Modules/SimpleTime.cpp"
+        ],
+        "directory": "/home/simrat39/cxxbar",
+        "file": "src/Modules/SimpleTime.cpp"
+    },
+    {
+        "arguments": [
+            "g++",
+            "-c",
+            "-O2",
+            "-std=c++2a",
+            "-Iinclude/",
+            "-I/usr/include/glib-2.0",
+            "-I/usr/lib/glib-2.0/include",
+            "-pthread",
+            "-I/usr/include/libmount",
+            "-I/usr/include/blkid",
+            "-o",
+            "src/Main.o",
+            "src/Main.cpp"
+        ],
+        "directory": "/home/simrat39/cxxbar",
+        "file": "src/Main.cpp"
+    },
+    {
+        "arguments": [
+            "g++",
+            "-c",
+            "-O2",
+            "-std=c++2a",
+            "-Iinclude/",
+            "-I/usr/include/glib-2.0",
+            "-I/usr/lib/glib-2.0/include",
+            "-pthread",
+            "-I/usr/include/libmount",
+            "-I/usr/include/blkid",
+            "-o",
+            "src/Modules/Script.o",
+            "src/Modules/Script.cpp"
+        ],
+        "directory": "/home/simrat39/cxxbar",
+        "file": "src/Modules/Script.cpp"
+    },
+    {
+        "arguments": [
+            "g++",
+            "-c",
+            "-O2",
+            "-std=c++2a",
+            "-Iinclude/",
+            "-I/usr/include/glib-2.0",
+            "-I/usr/lib/glib-2.0/include",
+            "-pthread",
+            "-I/usr/include/libmount",
+            "-I/usr/include/blkid",
+            "-o",
+            "src/Modules/Bspwm.o",
+            "src/Modules/Bspwm.cpp"
+        ],
+        "directory": "/home/simrat39/cxxbar",
+        "file": "src/Modules/Bspwm.cpp"
     }
 ]

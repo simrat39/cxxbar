@@ -40,26 +40,26 @@ $(OUT)	Makefile	/^$(OUT): $(OBJ)$/;"	t
 10	compile_commands.json	/^            "-o",$/;"	s	array:7.arguments
 10	compile_commands.json	/^            "-o",$/;"	s	array:8.arguments
 10	compile_commands.json	/^            "-o",$/;"	s	array:9.arguments
-11	compile_commands.json	/^            "src\/Main.o",$/;"	s	array:3.arguments
+11	compile_commands.json	/^            "src\/Main.o",$/;"	s	array:7.arguments
 11	compile_commands.json	/^            "src\/Modules\/Battery.o",$/;"	s	array:2.arguments
-11	compile_commands.json	/^            "src\/Modules\/Bspwm.o",$/;"	s	array:4.arguments
-11	compile_commands.json	/^            "src\/Modules\/DateTime.o",$/;"	s	array:7.arguments
-11	compile_commands.json	/^            "src\/Modules\/Network.o",$/;"	s	array:0.arguments
-11	compile_commands.json	/^            "src\/Modules\/SimpleDate.o",$/;"	s	array:8.arguments
+11	compile_commands.json	/^            "src\/Modules\/Bspwm.o",$/;"	s	array:9.arguments
+11	compile_commands.json	/^            "src\/Modules\/Network.o",$/;"	s	array:5.arguments
+11	compile_commands.json	/^            "src\/Modules\/Script.o",$/;"	s	array:8.arguments
+11	compile_commands.json	/^            "src\/Modules\/SimpleDate.o",$/;"	s	array:1.arguments
 11	compile_commands.json	/^            "src\/Modules\/SimpleTime.o",$/;"	s	array:6.arguments
-11	compile_commands.json	/^            "src\/Utils\/BspwmUtils.o",$/;"	s	array:9.arguments
-11	compile_commands.json	/^            "src\/Utils\/ConfigUtils.o",$/;"	s	array:5.arguments
-11	compile_commands.json	/^            "src\/Utils\/FileUtils.o",$/;"	s	array:1.arguments
-12	compile_commands.json	/^            "src\/Main.cpp"$/;"	s	array:3.arguments
+11	compile_commands.json	/^            "src\/Utils\/BspwmUtils.o",$/;"	s	array:0.arguments
+11	compile_commands.json	/^            "src\/Utils\/ConfigUtils.o",$/;"	s	array:3.arguments
+11	compile_commands.json	/^            "src\/Utils\/FileUtils.o",$/;"	s	array:4.arguments
+12	compile_commands.json	/^            "src\/Main.cpp"$/;"	s	array:7.arguments
 12	compile_commands.json	/^            "src\/Modules\/Battery.cpp"$/;"	s	array:2.arguments
-12	compile_commands.json	/^            "src\/Modules\/Bspwm.cpp"$/;"	s	array:4.arguments
-12	compile_commands.json	/^            "src\/Modules\/DateTime.cpp"$/;"	s	array:7.arguments
-12	compile_commands.json	/^            "src\/Modules\/Network.cpp"$/;"	s	array:0.arguments
-12	compile_commands.json	/^            "src\/Modules\/SimpleDate.cpp"$/;"	s	array:8.arguments
+12	compile_commands.json	/^            "src\/Modules\/Bspwm.cpp"$/;"	s	array:9.arguments
+12	compile_commands.json	/^            "src\/Modules\/Network.cpp"$/;"	s	array:5.arguments
+12	compile_commands.json	/^            "src\/Modules\/Script.cpp"$/;"	s	array:8.arguments
+12	compile_commands.json	/^            "src\/Modules\/SimpleDate.cpp"$/;"	s	array:1.arguments
 12	compile_commands.json	/^            "src\/Modules\/SimpleTime.cpp"$/;"	s	array:6.arguments
-12	compile_commands.json	/^            "src\/Utils\/BspwmUtils.cpp"$/;"	s	array:9.arguments
-12	compile_commands.json	/^            "src\/Utils\/ConfigUtils.cpp"$/;"	s	array:5.arguments
-12	compile_commands.json	/^            "src\/Utils\/FileUtils.cpp"$/;"	s	array:1.arguments
+12	compile_commands.json	/^            "src\/Utils\/BspwmUtils.cpp"$/;"	s	array:0.arguments
+12	compile_commands.json	/^            "src\/Utils\/ConfigUtils.cpp"$/;"	s	array:3.arguments
+12	compile_commands.json	/^            "src\/Utils\/FileUtils.cpp"$/;"	s	array:4.arguments
 2	compile_commands.json	/^            "-O2",$/;"	s	array:0.arguments
 2	compile_commands.json	/^            "-O2",$/;"	s	array:1.arguments
 2	compile_commands.json	/^            "-O2",$/;"	s	array:2.arguments
@@ -201,17 +201,19 @@ directory	compile_commands.json	/^        "directory": "\/home\/simrat39\/cxxbar
 doesFileExist	src/Utils/FileUtils.cpp	/^bool doesFileExist(const std::ifstream &file) { return (bool)file; }$/;"	f	namespace:FileUtils	typeref:typename:bool
 dummy	src/Main.cpp	/^void dummy() {$/;"	f	typeref:typename:void
 ethSysfs	src/Modules/Network.cpp	/^static std::string ethSysfs;$/;"	v	namespace:Network	typeref:typename:std::string	file:
-file	compile_commands.json	/^        "file": "src\/Main.cpp"$/;"	s	object:3
+file	compile_commands.json	/^        "file": "src\/Main.cpp"$/;"	s	object:7
 file	compile_commands.json	/^        "file": "src\/Modules\/Battery.cpp"$/;"	s	object:2
-file	compile_commands.json	/^        "file": "src\/Modules\/Bspwm.cpp"$/;"	s	object:4
-file	compile_commands.json	/^        "file": "src\/Modules\/DateTime.cpp"$/;"	s	object:7
-file	compile_commands.json	/^        "file": "src\/Modules\/Network.cpp"$/;"	s	object:0
-file	compile_commands.json	/^        "file": "src\/Modules\/SimpleDate.cpp"$/;"	s	object:8
+file	compile_commands.json	/^        "file": "src\/Modules\/Bspwm.cpp"$/;"	s	object:9
+file	compile_commands.json	/^        "file": "src\/Modules\/Network.cpp"$/;"	s	object:5
+file	compile_commands.json	/^        "file": "src\/Modules\/Script.cpp"$/;"	s	object:8
+file	compile_commands.json	/^        "file": "src\/Modules\/SimpleDate.cpp"$/;"	s	object:1
 file	compile_commands.json	/^        "file": "src\/Modules\/SimpleTime.cpp"$/;"	s	object:6
-file	compile_commands.json	/^        "file": "src\/Utils\/BspwmUtils.cpp"$/;"	s	object:9
-file	compile_commands.json	/^        "file": "src\/Utils\/ConfigUtils.cpp"$/;"	s	object:5
-file	compile_commands.json	/^        "file": "src\/Utils\/FileUtils.cpp"$/;"	s	object:1
+file	compile_commands.json	/^        "file": "src\/Utils\/BspwmUtils.cpp"$/;"	s	object:0
+file	compile_commands.json	/^        "file": "src\/Utils\/ConfigUtils.cpp"$/;"	s	object:3
+file	compile_commands.json	/^        "file": "src\/Utils\/FileUtils.cpp"$/;"	s	object:4
 foldersInDirectory	src/Modules/Network.cpp	/^int foldersInDirectory(const std::string &path) {$/;"	f	namespace:Network	typeref:typename:int
+format_output_str_post	src/Modules/Script.cpp	/^void format_output_str_post(std::string &post, const std::string &format_this) {$/;"	f	namespace:ScriptModule	typeref:typename:void
+format_output_str_pre	src/Modules/Script.cpp	/^void format_output_str_pre(std::string &pre, const std::string &format_this) {$/;"	f	namespace:ScriptModule	typeref:typename:void
 funcPtr	src/Main.cpp	/^typedef std::string (*funcPtr)();$/;"	t	typeref:typename:std::string (*)()	file:
 funcPtr	src/Utils/BspwmUtils.cpp	/^typedef void (*funcPtr)(std::string);$/;"	t	namespace:BspwmUtils	typeref:typename:void (*)(std::string)	file:
 funcPtr	src/Utils/BspwmUtils.h	/^typedef void (*funcPtr)(std::string);$/;"	t	namespace:BspwmUtils	typeref:typename:void (*)(std::string)
@@ -231,6 +233,7 @@ getOutput	src/Modules/SimpleDate.cpp	/^std::string getOutput() { return output; 
 getOutput	src/Modules/SimpleTime.cpp	/^std::string getOutput() { return output; }$/;"	f	namespace:SimpleTime	typeref:typename:std::string
 getTime	src/Modules/SimpleTime.cpp	/^std::string getTime() {$/;"	f	namespace:SimpleTime	typeref:typename:std::string
 getValue	src/Utils/ConfigUtils.cpp	/^std::string getValue(const std::string &key, const std::string &defaultVal) {$/;"	f	namespace:ConfigUtils	typeref:typename:std::string
+getValueWithQuotes	src/Utils/ConfigUtils.cpp	/^std::string getValueWithQuotes(const std::string &key,$/;"	f	namespace:ConfigUtils	typeref:typename:std::string
 leftModules	src/Main.cpp	/^std::vector<std::string> leftModules;$/;"	v	typeref:typename:std::vector<std::string>
 leftPadding	src/Main.cpp	/^std::string leftPadding;$/;"	v	typeref:typename:std::string
 looper	src/Main.cpp	/^void looper(int sleepTime, funcPtr func) {$/;"	f	typeref:typename:void
@@ -240,6 +243,7 @@ m_Script	src/Modules/Script.h	/^  std::string m_Script;$/;"	m	class:Script	typer
 m_SleepTime	src/Modules/Script.h	/^  int m_SleepTime;$/;"	m	class:Script	typeref:typename:int
 m_background_color	src/Modules/Script.h	/^  std::string m_underline_color, m_background_color, m_foreground_color;$/;"	m	class:Script	typeref:typename:std::string
 m_foreground_color	src/Modules/Script.h	/^  std::string m_underline_color, m_background_color, m_foreground_color;$/;"	m	class:Script	typeref:typename:std::string
+m_format	src/Modules/Script.h	/^  std::string m_format;$/;"	m	class:Script	typeref:typename:std::string
 m_left_click	src/Modules/Script.h	/^  std::string m_left_click, m_right_click, m_middle_click, m_scroll_up,$/;"	m	class:Script	typeref:typename:std::string
 m_middle_click	src/Modules/Script.h	/^  std::string m_left_click, m_right_click, m_middle_click, m_scroll_up,$/;"	m	class:Script	typeref:typename:std::string
 m_right_click	src/Modules/Script.h	/^  std::string m_left_click, m_right_click, m_middle_click, m_scroll_up,$/;"	m	class:Script	typeref:typename:std::string
